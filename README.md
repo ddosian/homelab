@@ -29,6 +29,14 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 ### Storage
 - **TrueNAS** - NAS solution
 
+### Media Stack
+- **Jellyfin** - Streaming
+- **Jellyseer** - Requests
+- **Radarr** - Movie index manager
+- **Sonarr** - Show index manager
+- **Prowlarr** - Torrent manager
+- **qBittorrent** - 😉
+
 ## 🌐 Network Architecture 
 **Key Features:**
 - Segmented VLANs for security and organization
