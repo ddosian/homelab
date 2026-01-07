@@ -2,7 +2,7 @@
 "[Kubernetes](https://kubernetes.io/docs/concepts/overview/), also known as K8s, is an open source system for automating deployment, scaling, and management of containerized applications." - [kubernetes.io](https://kubernetes.io/)
 ## Basic Info 
 - **Version:** K3s v1.34.3
-- **Deployed:** 7th January 2026
+- **Deployment date:** 7th January 2026
 ## Architecture 
 **High Availability Setup:** 
 - 3 control plane nodes with embedded etcd 
