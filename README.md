@@ -44,7 +44,8 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Synapse** - Self-hosted, decentralised communication
 
 ### Games
-- **Pelican** - Game servers
+- **Pelican** - Game panel
+- **Wings** - Game servers
 
 ## 🌐 Network Architecture 
 **Key Features:**
