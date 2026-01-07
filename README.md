@@ -10,16 +10,23 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ## 🖥️ Hardware
 
-| Component | Model / Specs                                                     | Role                  |
-| --------- | ----------------------------------------------------------------- | --------------------- |
-| Firewall  | pfsense on pve-01                                                 | Edge firewall, DHCP   |
-| Switch    | Arista DCS-7010T                                                  | Core / L3 switch      |
-| PVE-01    | HPE ProLiant DL360 Gen 9<br>2x Intel Xeon E5-2673 v3<br>128GB RAM | Virtualisation server |
-| TrueNAS   | AMD FX-6100<br>24GB RAM<br>8TB Storage                            | Storage               |
+| Component     | Model / Specs                                                     | Role                     |
+| ------------- | ----------------------------------------------------------------- | ------------------------ |
+| Firewall      | pfsense on pve-01                                                 | Edge firewall, DHCP      |
+| Switch        | Arista DCS-7010T                                                  | Core / L3 switch         |
+| PVE-01        | HPE ProLiant DL360 Gen 9<br>2x Intel Xeon E5-2673 v3<br>128GB RAM | Virtualisation server    |
+| K3s-CP-01     | Raspberry Pi 5                                                    | Kubernetes control plane |
+| K3s-CP-02     | Raspberry Pi 5                                                    | Kubernetes control plane |
+| K3s-CP-03     | Raspberry Pi 5                                                    | Kubernetes control plane |
+| K3s-Worker-01 | HP EliteDesk G4 705                                               | Kubernetes worker        |
+| K3s-Worker-02 | HP EliteDesk G4 800                                               | Kubernetes worker        |
+| K3s-Worker-03 | HP EliteDesk G4 800                                               | Kubernetes worker        |
+| TrueNAS       | AMD FX-6100<br>24GB RAM<br>8TB Storage                            | Storage                  |
 
 ##  🚀 Services, Applications & Deployments
 ### Infrastructure
 - [**Proxmox VE**](docs/infrastructure/proxmox-ve.md) - Type 1 hypervisor
+- **Kubernetes** - Container orchestration
 - **Docker** - Containerisation 
 
 ### Networking
