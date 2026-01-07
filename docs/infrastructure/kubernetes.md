@@ -8,6 +8,7 @@
 - 3 control plane nodes with embedded etcd 
 - Shared VIP (10.20.40.10) via keepalived for automatic failover 
 - 3 worker nodes for workload distribution 
+
 **Network:** 
 - Cluster VLAN: 40 (10.20.40.0/24) 
 - Control plane VIP: 10.20.40.10 
