@@ -60,7 +60,7 @@ vrrp_instance VI_1 {
     }
 }
 ```
-##### k3s-cp-02
+##### k3s-cp-03
 ```
 vrrp_instance VI_1 {
     state BACKUP
