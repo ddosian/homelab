@@ -38,9 +38,12 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Prowlarr** - Torrent manager
 - **qBittorrent** - 😉
 
-### Other
-- Synapse - Self-hosted, decentralised communication
-- Pelican - Game servers
+### Communication
+- **Mailcow** - mail
+- **Synapse** - Self-hosted, decentralised communication
+
+### Games
+- **Pelican** - Game servers
 
 ## 🌐 Network Architecture 
 **Key Features:**
