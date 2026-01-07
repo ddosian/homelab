@@ -12,7 +12,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ##  🚀 Services, Applications & Deployments
 ### Infrastructure
-- **Proxmox VE** - Type 1 hypervisor
+- [**Proxmox VE**](docs/infrastructure/proxmox-ve.md) - Type 1 hypervisor
 - **Docker** - Containerisation 
 
 ### Networking
