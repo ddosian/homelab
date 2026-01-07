@@ -6,6 +6,13 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 - [Hardware](#-hardware)
 - [Services, Applications & Deployments](#-services-applications--deployments)
+	- [Infrastructure](#-infrastructure)
+	- [Networking](#-networking)
+	- [Security](#-security)
+	- [Storage](#-storage)
+	- [Media Stack](#-media-stack)
+	- [Communication](#-communication)
+	- [Games](#-games)
 - [Network Architecture](#-network-architecture)
 
 ## 🖥️ Hardware
