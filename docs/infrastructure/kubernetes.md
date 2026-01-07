@@ -1,13 +1,26 @@
 # Kubernetes
 "[Kubernetes](https://kubernetes.io/docs/concepts/overview/), also known as K8s, is an open source system for automating deployment, scaling, and management of containerized applications." - [kubernetes.io](https://kubernetes.io/)
+## Basic Info 
+- **Version:** K3s v1.34.3
+- **Deployed:** 7th January 2026
+## Architecture 
+**High Availability Setup:** 
+- 3 control plane nodes with embedded etcd 
+- Shared VIP (10.20.40.10) via keepalived for automatic failover 
+- 3 worker nodes for workload distribution 
+**Network:** 
+- Cluster VLAN: 40 (10.20.40.0/24) 
+- Control plane VIP: 10.20.40.10 
+- Control planes: .11, .12, .13 
+- Workers: .21, .22, .23
 ## Nodes
 ### Control Planes
 
-| Name      | IP          | CPU | RAM (GB) |
-| --------- | ----------- | --- | -------- |
-| k3s-cp-01 | 10.20.40.11 |     | 8        |
-| k3s-cp-02 | 10.20.40.12 |     | 8        |
-| k3s-cp-03 | 10.20.40.13 |     | 8        |
+| Name      | IP          | CPU            | RAM (GB) |
+| --------- | ----------- | -------------- | -------- |
+| k3s-cp-01 | 10.20.40.11 | ARM Cortex-A76 | 8        |
+| k3s-cp-02 | 10.20.40.12 | ARM Cortex-A76 | 8        |
+| k3s-cp-03 | 10.20.40.13 | ARM Cortex-A76 | 8        |
 ### Workers
 | Name          | IP          | CPU                    | RAM (GB) |
 | ------------- | ----------- | ---------------------- | -------- |
@@ -15,7 +28,6 @@
 | k3s-worker-02 | 10.20.40.22 | Intel i5 8600          | 16       |
 | k3s-worker-03 | 10.20.40.23 | Intel i5 8600          | 16       |
 ## Deployment guide
-My cluster is has 3 control planes, this makes it HA.
 ### Shared VIP for the 3 control planes
 #### 1. Install keepalived
 ```bash
