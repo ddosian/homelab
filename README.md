@@ -48,4 +48,5 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - Arista DCS-7010T providing L3 switching
 - pfSense handling firewall rules and DHCP
 - AdGuard Home for DNS filtering across all VLANs
+
 **Detailed network documentation:** [docs/networking.md](docs/networking.md)
