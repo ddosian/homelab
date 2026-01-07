@@ -12,6 +12,6 @@
 | 106 | wazuh      | 10.77.1.106  | 1    | 2     | 4        | 32           | pve-01 | Ubuntu Server 24.04.3 LTS |
 ### LXCs
 
-| ID  | Name         | IP   | VLAN | Cores | RAM (GB) | Storage (GB) | Host   | OS                   |
+| ID  | Name         | IP   | VLAN | Cores | RAM (GB) | Storage (GB) | Host   | OS                  |
 | --- | ------------ | ---- | ---- | ----- | -------- | ------------ | ------ | ------------------- |
-| 103 | tailscale-01 | DHCP | 1    | 1     | 0.5      | 8            | pve-01 Ubuntu Server 25.04 r  |
+| 103 | tailscale-01 | DHCP | 1    | 1     | 0.5      | 8            | pve-01 | Ubuntu Server 25.04 |
