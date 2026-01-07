@@ -38,7 +38,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Prowlarr** - Torrent manager
 - **qBittorrent** - 😉
 
-## Other
+### Other
 - Synapse - Self-hosted, decentralised communication
 - Pelican - Game servers
 
