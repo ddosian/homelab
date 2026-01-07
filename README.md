@@ -23,6 +23,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ### Security
 - **Vaultwarden** - Password manager
+- Authentik - SSO and OIDC
 - **CrowdSec** - Intrusion prevention
 - **Wazuh** - Security monitoring and SIEM
 
@@ -36,6 +37,10 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Sonarr** - Show index manager
 - **Prowlarr** - Torrent manager
 - **qBittorrent** - 😉
+
+## Other
+- Synapse - Self-hosted, decentralised communication
+- Pelican - Game servers
 
 ## 🌐 Network Architecture 
 **Key Features:**
