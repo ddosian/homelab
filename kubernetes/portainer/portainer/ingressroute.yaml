@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: portainer
+  namespace: portainer
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`portainer.local.dontddos.me`)
+      kind: Rule
+      services:
+        - name: portainer-helm
+          port: 9000
