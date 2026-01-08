@@ -42,14 +42,14 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - Authentik - SSO and OIDC
 - **CrowdSec** - Intrusion prevention
 - **Wazuh** - Security monitoring and SIEM
-- [**Cert Manager**](kubernetes/cert-manager/cert-manager/)
+- [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automated SSL/TLS certificate management
 
 ### Git & CI/CD
-- **Gitea**
-- **ArgoCD**
+- **Gitea** - Self-hosted Git service
+- **ArgoCD** - Continuous delivery tool for Kubernetes deployments
 
 ### Storage
-- [**Longhorn**](/kubernetes/longhorn-system/longhorn/)
+- [**Longhorn**](/kubernetes/longhorn-system/longhorn/) - Distributed block storage system for Kubernetes persistent volumes
 - **TrueNAS** - NAS solution
 
 ### Media Stack
