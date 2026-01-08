@@ -99,5 +99,5 @@ Arista DCS-7010T - Core L3 Switch
 
 ## 🔗 Links 
 - **Personal Website:** https://dontddos.me 
-- **GitHub:** github.com/ddosian 
+- **GitHub:** https://github.com/ddosian 
 - **Self-hosted Gitea:** https://gitea.dontddos.me
