@@ -27,6 +27,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 ##  🚀 Services, Applications & Deployments
 ### Infrastructure
 - [**Proxmox VE**](docs/infrastructure/proxmox-ve.md) - Type 1 hypervisor
+- [**Portainer**](kubernetes/portainer/portainer) - Kubernetes & Docker management GUI
 - [**Kubernetes**](docs/infrastructure/kubernetes.md) - Container orchestration
 - **Docker** - Containerisation 
 
