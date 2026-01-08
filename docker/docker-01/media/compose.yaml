@@ -8,7 +8,7 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     volumes:
-      - ./gluetun:/gluetun
+      - /opt/containers/media/gluetun:/gluetun
     environment:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
@@ -29,7 +29,7 @@ services:
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
-      - ./qbittorrent/config:/config
+      - /opt/containers/media/qbittorrent/config:/config
       - /mnt/media/downloads:/downloads
     restart: unless-stopped
   prowlarr:
@@ -41,7 +41,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./prowlarr/config:/config
+      - /opt/containers/media/prowlarr/config:/config
     restart: unless-stopped
   radarr:
     image: lscr.io/linuxserver/radarr:latest
@@ -52,7 +52,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./radarr/data:/data
+      - /opt/containers/media/radarr/data:/data
       - /mnt/media/movies:/movies
       - /mnt/media/downloads:/downloads
     restart: unless-stopped
@@ -65,7 +65,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./sonarr/data:/config
+      - /opt/containers/media/sonarr/data:/config
       - /mnt/media/tvseries:/tv
       - /mnt/media/downloads:/downloads
     restart: unless-stopped
