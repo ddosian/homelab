@@ -17,7 +17,7 @@ spec:
           tlsStore:
             default:
               defaultCertificate:
-                secretName: internal-wildcard-cert
+                secretName: local-wildcard-cert
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
