@@ -1,0 +1,40 @@
+---
+services:
+  nginx:
+    image: nginx:1.29.4
+    container_name: nginx-proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /opt/containers/proxy/config/conf.d:/etc/nginx/conf.d:ro
+      - /opt/containers/proxy/certs:/etc/letsencrypt:ro
+    networks:
+      - proxy
+    restart: unless-stopped
+  certbot:
+    image: certbot/dns-cloudflare:v5.2.2
+    container_name: certbot
+    entrypoint: /bin/sh
+    environment:
+      CF_API_TOKEN: ${CF_API_TOKEN}
+    volumes:
+      - /opt/containers/proxy/certs:/etc/letsencrypt
+    command: >
+      -c "
+      echo \"dns_cloudflare_api_token=$CF_API_TOKEN\" > /tmp/cloudflare.ini &&
+      chmod 600 /tmp/cloudflare.ini &&
+      certbot certonly
+      --dns-cloudflare
+      --dns-cloudflare-credentials /tmp/cloudflare.ini
+      --dns-cloudflare-propagation-seconds 60
+      -d '*.local.dontddos.me'
+      --agree-tos
+      --non-interactive
+      -m acme@dontddos.me
+      "
+    restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
