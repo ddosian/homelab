@@ -11,7 +11,11 @@ spec:
   sources:
     - chart: longhorn
       repoURL: https://charts.longhorn.io
-      targetRevision: 1.9.1
+      targetRevision: 1.10.1
+      helm:
+        values: |
+          preUpgradeChecker:
+            jobEnabled: false
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
