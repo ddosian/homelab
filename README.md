@@ -7,6 +7,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - [Hardware](#-hardware)
 - [Services, Applications & Deployments](#-services-applications--deployments)
 - [Network Architecture](#-network-architecture)
+- [Goals for the Future](#-goals-for-the-future)
 - [Links](#-links)
 
 ## 🖥️ Hardware
@@ -100,6 +101,10 @@ Arista DCS-7010T - Core L3 Switch
 - Wazuh SIEM for security event analysis
 
 **Detailed network documentation:** [docs/networking.md](docs/networking.md)
+
+## 🔮 Goals for the Future
+- [ ] automatic backups on all essential components 
+- [ ] off-site backups with b2
 
 ## 🔗 Links 
 - **Personal Website:** https://dontddos.me 
