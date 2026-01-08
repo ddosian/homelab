@@ -41,7 +41,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - Authentik - SSO and OIDC
 - **CrowdSec** - Intrusion prevention
 - **Wazuh** - Security monitoring and SIEM
-- **Cert Manager** - [Kubernetes manifests](kubernetes/cert-manager/cert-manager/)
+- [**Cert Manager**](kubernetes/cert-manager/cert-manager/)
 
 ### Git & CI/CD
 - **Gitea**
