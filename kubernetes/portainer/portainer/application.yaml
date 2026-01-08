@@ -14,8 +14,6 @@ spec:
       targetRevision: 2.33.6
       helm:
         parameters:
-          - name: service.type
-            value: "LoadBalancer"
           - name: image.tag
             value: "lts"
   syncPolicy:
