@@ -84,7 +84,7 @@ Arista DCS-7010T - Core L3 Switch
 	└─ VLAN 40 (10.20.40.0/24) - Kubernetes Cluster
 ```
 **Key Features:**
-- Segmented VLANs for security and organization
+- Segmented VLANs for security and organisation
 - Arista DCS-7010T providing L3 switching
 - pfSense handling firewall rules and DHCP
 - AdGuard Home for DNS filtering across all VLANs
