@@ -1,0 +1,11 @@
+---
+services:
+  gitea-runner:
+    image: gitea/act_runner:nightly
+    container_name: gitea-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      GITEA_INSTANCE_URL: "https://gitea.dontddos.me"
+      GITEA_RUNNER_REGISTRATION_TOKEN: ${GITEA_RUNNER_REGISTRATION_TOKEN}
+    restart: unless-stopped
