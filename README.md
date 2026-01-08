@@ -33,10 +33,10 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ### Networking
 - **pfSense** - Edge firewall, DHCP
-- **AdGuard Home** - DNS
+- [**AdGuard Home**](docker/docker-01/adguard-home/) - DNS
 - **Pangolin** - Proxy for external HTTP traffic
-- **Traefik** - Proxy for internal HTTP trafic to kubernetes
-- **Nginx** - Proxy for internal HTTP traffic
+- [**Traefik**](kubernetes/traefik/traefik) - Proxy for internal HTTP trafic to kubernetes
+- [**Nginx**](docker/multi-host/proxy/) - Proxy for internal HTTP traffic
 - **Tailscale** - Remote access via VPN
 ### Monitoring
 - [**Grafana**](kubernetes/monitoring/grafana/)
