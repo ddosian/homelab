@@ -49,6 +49,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **ArgoCD**
 
 ### Storage
+- [**Longhorn**](/kubernetes/longhorn-system/longhorn/)
 - **TrueNAS** - NAS solution
 
 ### Media Stack
