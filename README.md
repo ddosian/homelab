@@ -69,10 +69,35 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Wings** - Game servers
 
 ## 🌐 Network Architecture 
+**Network Topology:** 
+``` 
+Internet
+	↓
+pfSense (10.77.0.1) - Edge Firewall/Router
+	↓
+Arista DCS-7010T - Core L3 Switch
+	↓
+	├─ VLAN 1 (10.77.0.0/16) - Default/LAN
+	├─ VLAN 10 (10.20.10.0/24) - Management
+	├─ VLAN 20 (10.20.20.0/24) - DMZ (Public Services)
+	├─ VLAN 30 (10.20.30.0/24) - Games/Wings
+	└─ VLAN 40 (10.20.40.0/24) - Kubernetes Cluster
+```
 **Key Features:**
 - Segmented VLANs for security and organization
 - Arista DCS-7010T providing L3 switching
 - pfSense handling firewall rules and DHCP
 - AdGuard Home for DNS filtering across all VLANs
+**Security Measures:** 
+- DMZ isolation for internet-facing services 
+- Kubernetes workloads on isolated VLAN 
+- Firewall rules controlling inter-VLAN traffic 
+- CrowdSec IPS monitoring all traffic incoming traffic
+- Wazuh SIEM for security event analysis
 
 **Detailed network documentation:** [docs/networking.md](docs/networking.md)
+
+## 🔗 Links 
+- **Personal Website:** https://dontddos.me 
+- **GitHub:** github.com/ddosian 
+- **Self-hosted Gitea:** https://gitea.dontddos.me
