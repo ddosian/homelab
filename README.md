@@ -33,6 +33,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **pfSense** - Edge firewall, DHCP
 - **AdGuard Home** - DNS
 - **Pangolin** - Proxy for external HTTP traffic
+- **Traefik** - Proxy for internal HTTP trafic to kubernetes
 - **Nginx** - Proxy for internal HTTP traffic
 - **Tailscale** - Remote access via VPN
 
