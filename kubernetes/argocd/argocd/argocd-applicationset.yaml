@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argocd-applicationset
+  namespace: argocd
+spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  goTemplate: true
+  generators:
+    - git:
+        repoURL: https://gitea.dontddos.me/dontddos/homelab.git
+        revision: HEAD
+        directories:
+          - path: kubernetes/*/*
+  template:
+    metadata:
+      name: '{{.path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://gitea.dontddos.me/dontddos/homelab.git
+        path: '{{.path.path}}'
+        targetRevision: HEAD
+      destination:
+        server: "https://kubernetes.default.svc"
+        namespace: '{{index .path.segments 1}}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          allowEmpty: true
+          prune: true
+          selfHeal: true
