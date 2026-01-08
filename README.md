@@ -42,6 +42,10 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **CrowdSec** - Intrusion prevention
 - **Wazuh** - Security monitoring and SIEM
 
+### Git & CI/CD
+- **Gitea**
+- **ArgoCD**
+
 ### Storage
 - **TrueNAS** - NAS solution
 
