@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik-helm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: traefik
+  project: default
+  sources:
+    - chart: traefik
+      repoURL: https://traefik.github.io/charts
+      helm:
+        values: |
+          tlsStore:
+            default:
+              defaultCertificate:
+                secretName: internal-wildcard-cert
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
