@@ -11,7 +11,7 @@ spec:
     - match: Host(`longhorn.local.dontddos.me`)
       kind: Rule
       middlewares:
-        - name: longhorn-basic-auth
+        - name: longhorn-basic-auth-basic-auth
       services:
         - name: longhorn-frontend
           port: 80
