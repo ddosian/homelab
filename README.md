@@ -80,6 +80,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - [**Nginx**](docker/multi-host/proxy/) - Proxy for internal HTTP traffic
 - **Tailscale** - Remote access via VPN
 ### Monitoring
+- [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/)
 - [**Grafana**](kubernetes/monitoring/grafana/)
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
 ### Security
