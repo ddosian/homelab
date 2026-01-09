@@ -84,7 +84,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
 ### Security
 - [**Vaultwarden**](docker/dcker-01/vaultwarden/) - Password manager
-- Authentik - SSO and OIDC
+- [**Authentik**](docker/docker-02/authentik/) - SSO and OIDC
 - **CrowdSec** - IPS monitoring for all incoming traffic
 - **Wazuh** - Security monitoring and SIEM
 - [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automated SSL/TLS certificate management
@@ -99,8 +99,8 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **TrueNAS** - NAS solution
 
 ### Media Stack
-- **Jellyfin** - Streaming
-- **Jellyseer** - Requests
+- [**Jellyfin**](docker/docker-02/jellyfin/) - Streaming
+- [**Jellyseer**](docker/docker-02/jellyseerr) - Requests
 - **Radarr** - Movie index manager
 - **Sonarr** - Show index manager
 - **Prowlarr** - Torrent manager
