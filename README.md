@@ -26,8 +26,8 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - DNS management (AdGuard Home)
 - VPN configuration (Tailscale)
 
-**Infrastructure & Virtualization:**
-- Virtualization platforms (Proxmox VE)
+**Infrastructure & Virtualisation:**
+- Virtualisation platforms (Proxmox VE)
 - Container orchestration (Kubernetes/K3s)
 - High availability design (3-node control plane with keepalived VIP)
 - Hybrid ARM/x86 architecture
