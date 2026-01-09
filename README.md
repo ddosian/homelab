@@ -152,7 +152,7 @@ Arista DCS-7010T - Core L3 Switch
 - [ ] Add Netbox for network documentation and IPAM
 
 **Learning & Certification:**
-- [ ] Complete CCNA certification (target: Summer 2026)
+- [ ] Complete CCNA certification
 - [ ] Expand monitoring with custom Grafana dashboards
 - [ ] Learn Terraform for infrastructure provisioning
 - [ ] Implement full GitOps workflow for all services
