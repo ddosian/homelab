@@ -3,13 +3,53 @@
 If you are viewing on GitHub, you can view this repo on my self-hosted instance of Gitea <a href="https://gitea.dontddos.me/dontddos/homelab">here</a>.
 
 ## 📋 Table of Contents
-
+- [Overview](#-overview)
+- [Skills Demonstrated](#-skills-demonstrated)
 - [Hardware](#-hardware)
 - [Services, Applications & Deployments](#-services-applications--deployments)
 - [Network Architecture](#-network-architecture)
 - [Goals for the Future](#-goals-for-the-future)
 - [Links](#-links)
+## 👁️ Overview
+- **Lab Started**: 4th January 2026
+- **Purpose**: to learn more about networking, infrastructure management, git, CI/CD and other IT related topics
+- **Contents**: this git repo contains most, if not all, of my homelab infrastructure
+- **Scale**: I still consider this lab to be a relatively small one, it defiantly could be much smaller, but at the same time it could also be allot bigger
 
+## 📚 Skills Demonstrated
+
+**Networking:**
+- Enterprise switching (Arista DCS-7010T)
+- VLAN configuration and inter-VLAN routing
+- Firewall management and security policies (pfSense)
+- Network segmentation (DMZ, management, isolated workload VLANs)
+- DNS management (AdGuard Home)
+- VPN configuration (Tailscale)
+
+**Infrastructure & Virtualization:**
+- Virtualization platforms (Proxmox VE)
+- Container orchestration (Kubernetes/K3s)
+- High availability design (3-node control plane with keepalived VIP)
+- Hybrid ARM/x86 architecture
+- Distributed storage (Longhorn)
+
+**DevOps & Automation:**
+- GitOps continuous delivery (ArgoCD)
+- Infrastructure as Code (Kubernetes manifests in Git)
+- Configuration management
+- Automated certificate management (Cert Manager)
+- CI/CD concepts
+
+**Security:**
+- SIEM implementation (Wazuh)
+- Intrusion detection/prevention (CrowdSec)
+- Single sign-on (Authentik)
+- Network security architecture
+- Automated SSL/TLS management
+
+**Operations:**
+- Service monitoring (Prometheus + Grafana)
+- Container management (Portainer)
 ## 🖥️ Hardware
 
 | Component     | Model / Specs                                                     | Role                     |
@@ -102,9 +142,21 @@ Arista DCS-7010T - Core L3 Switch
 
 **Detailed network documentation:** [docs/networking.md](docs/networking.md)
 
-## 🔮 Goals for the Future
-- [ ] automatic backups on all essential components 
-- [ ] off-site backups with b2
+## 🎯 Goals for the Future
+
+**Infrastructure Improvements:**
+- [ ] Automated backups for all critical components (VMs, configurations, databases)
+- [ ] Off-site backups with Backblaze B2
+- [ ] Implement Ansible for configuration management automation
+- [ ] Deploy LibreNMS for SNMP-based network monitoring
+- [ ] Add Netbox for network documentation and IPAM
+
+**Learning & Certification:**
+- [ ] Complete CCNA certification (target: Summer 2026)
+- [ ] Expand monitoring with custom Grafana dashboards
+- [ ] Learn Terraform for infrastructure provisioning
+- [ ] Implement full GitOps workflow for all services
+
 
 ## 🔗 Links 
 - **Personal Website:** https://dontddos.me 
