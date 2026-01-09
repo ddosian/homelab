@@ -146,8 +146,8 @@ Arista DCS-7010T - Core L3 Switch
 ## 🎯 Goals for the Future
 
 **Infrastructure Improvements:**
-- [ ] Automated backups for all critical components (VMs, configurations, databases)
-- [ ] Off-site backups with Backblaze B2
+- [x] Automated backups for all critical components (VMs, configurations, databases)
+- [x] Off-site backups with Backblaze B2
 - [ ] Implement Ansible for configuration management automation
 - [ ] Deploy LibreNMS for SNMP-based network monitoring
 - [ ] Add Netbox for network documentation and IPAM
