@@ -95,6 +95,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ### Storage
 - [**Longhorn**](/kubernetes/longhorn-system/longhorn/) - Distributed block storage system for Kubernetes persistent volumes
+- [**CloudNative PG**](/kubernetes/cnpg-system/cnpg/)
 - **TrueNAS** - NAS solution
 
 ### Media Stack
