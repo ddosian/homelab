@@ -111,7 +111,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Synapse** - Self-hosted, decentralised communication
 
 ### Games
-- **Pelican** - Game panel
+- [**Pelican**](docker/docker-02/pelican/) - Game panel
 - **Wings** - Game servers
 
 ## 🌐 Network Architecture 
