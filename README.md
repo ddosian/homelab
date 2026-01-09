@@ -75,7 +75,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 ### Networking
 - **pfSense** - Edge firewall, DHCP
 - [**AdGuard Home**](docker/docker-01/adguard-home/) - DNS
-- **Pangolin** - Proxy for external HTTP traffic
+- **Pangolin** - Reverse proxy for external HTTP traffic (internet-facing)
 - [**Traefik**](kubernetes/traefik/traefik) - Proxy for internal HTTP traffic to Kubernetes
 - [**Nginx**](docker/multi-host/proxy/) - Proxy for internal HTTP traffic
 - **Tailscale** - Remote access via VPN
@@ -83,7 +83,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - [**Grafana**](kubernetes/monitoring/grafana/)
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
 ### Security
-- [**Vaultwarden**](docker/dcker-01/vaultwarden/) - Password manager
+- [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
 - [**Authentik**](docker/docker-02/authentik/) - SSO and OIDC
 - **CrowdSec** - IPS monitoring for all incoming traffic
 - **Wazuh** - Security monitoring and SIEM
@@ -100,7 +100,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ### Media Stack
 - [**Jellyfin**](docker/docker-02/jellyfin/) - Streaming
-- [**Jellyseer**](docker/docker-02/jellyseerr) - Requests
+- [**Jellyseerr**](docker/docker-02/jellyseerr) - Requests
 - **Radarr** - Movie index manager
 - **Sonarr** - Show index manager
 - **Prowlarr** - Torrent manager
