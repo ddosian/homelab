@@ -8,7 +8,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`longorn.local.dontddos.me`)
+    - match: Host(`longhorn.local.dontddos.me`)
       kind: Rule
       middlewares:
         - name: longhorn-basic-auth
