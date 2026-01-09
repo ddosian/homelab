@@ -83,7 +83,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - [**Grafana**](kubernetes/monitoring/grafana/)
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
 ### Security
-- **Vaultwarden** - Password manager
+- [**Vaultwarden**](docker/dcker-01/vaultwarden/) - Password manager
 - Authentik - SSO and OIDC
 - **CrowdSec** - IPS monitoring for all incoming traffic
 - **Wazuh** - Security monitoring and SIEM
