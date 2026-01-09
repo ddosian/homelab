@@ -90,7 +90,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automated SSL/TLS certificate management
 
 ### Git & CI/CD
-- **Gitea** - Self-hosted Git service
+- [**Gitea**](docker/docker-02/gitea/) - Self-hosted Git service
 - **ArgoCD** - Continuous delivery tool for Kubernetes deployments
 
 ### Storage
