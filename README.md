@@ -14,7 +14,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Lab Started**: 4th January 2026
 - **Purpose**: to learn more about networking, infrastructure management, git, CI/CD and other IT related topics
 - **Contents**: this git repo contains most, if not all, of my homelab infrastructure
-- **Scale**: I still consider this lab to be a relatively small one, it defiantly could be much smaller, but at the same time it could also be allot bigger
+- **Scale**: I still consider this lab to be a relatively small one
 
 ## 📚 Skills Demonstrated
 
@@ -76,7 +76,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **pfSense** - Edge firewall, DHCP
 - [**AdGuard Home**](docker/docker-01/adguard-home/) - DNS
 - **Pangolin** - Proxy for external HTTP traffic
-- [**Traefik**](kubernetes/traefik/traefik) - Proxy for internal HTTP trafic to kubernetes
+- [**Traefik**](kubernetes/traefik/traefik) - Proxy for internal HTTP traffic to Kubernetes
 - [**Nginx**](docker/multi-host/proxy/) - Proxy for internal HTTP traffic
 - **Tailscale** - Remote access via VPN
 ### Monitoring
@@ -85,7 +85,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 ### Security
 - **Vaultwarden** - Password manager
 - Authentik - SSO and OIDC
-- **CrowdSec** - Intrusion prevention
+- **CrowdSec** - IPS monitoring for all incoming traffic
 - **Wazuh** - Security monitoring and SIEM
 - [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automated SSL/TLS certificate management
 
@@ -137,7 +137,7 @@ Arista DCS-7010T - Core L3 Switch
 - DMZ isolation for internet-facing services 
 - Kubernetes workloads on isolated VLAN 
 - Firewall rules controlling inter-VLAN traffic 
-- CrowdSec IPS monitoring all traffic incoming traffic
+- CrowdSec IPS monitoring all incoming traffic
 - Wazuh SIEM for security event analysis
 
 **Detailed network documentation:** [docs/networking.md](docs/networking.md)
