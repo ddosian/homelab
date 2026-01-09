@@ -1,0 +1,18 @@
+---
+services:
+  jellyseerr:
+    image: ghcr.io/fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - TZ=Etc/UTC
+    ports:
+      - 5055:5055
+    volumes:
+      - ./config:/app/config
+    networks:
+      - newt
+    restart: unless-stopped
+
+networks:
+  newt:
+    external: true
