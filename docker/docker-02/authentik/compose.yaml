@@ -39,8 +39,8 @@ services:
       - newt
     restart: unless-stopped
     volumes:
-    - ./media:/media
-    - ./custom-templates:/templates
+    - /opt/containers/authentik/media:/media
+    - /opt/containers/authentik/custom-templates:/templates
   worker:
     command: worker
     depends_on:
@@ -57,9 +57,9 @@ services:
     user: root
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - ./media:/media
-    - ./certs:/certs
-    - ./custom-templates:/templates
+    - /opt/containers/authentik/media:/media
+    - /opt/containers/authentik/certs:/certs
+    - /opt/containers/authentik/custom-templates:/templates
     networks:
       - authentik
 volumes:
