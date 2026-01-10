@@ -1,0 +1,14 @@
+---
+services:
+  nginx:
+    image: nginx:latest
+    container_name: website
+    volumes:
+      - ./content:/usr/share/nginx/html:ro
+    networks:
+      - newt
+    restart: unless-stopped
+
+networks:
+  newt:
+    external: true
