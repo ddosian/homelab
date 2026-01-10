@@ -4,6 +4,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ## 📋 Table of Contents
 - [Overview](#-overview)
+- [Status / Uptime](#-status--uptime)
 - [Skills Demonstrated](#-skills-demonstrated)
 - [Hardware](#-hardware)
 - [Services, Applications & Deployments](#-services-applications--deployments)
@@ -15,6 +16,20 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Purpose**: to learn more about networking, infrastructure management, git, CI/CD and other IT related topics
 - **Contents**: this git repo contains most, if not all, of my homelab infrastructure
 - **Scale**: I still consider this lab to be a relatively small one
+
+## ✅ Status / Uptime
+Live status page: https://status.dontddos.me/status/homelab
+
+| Service | Status | Uptime (24h) |
+|---|---|---|
+| PVE-01 | [![](https://status.dontddos.me/api/badge/1/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/1/uptime)](https://status.dontddos.me/status/homelab) |
+| Portainer | [![](https://status.dontddos.me/api/badge/8/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/8/uptime)](https://status.dontddos.me/status/homelab) |
+| K3s-CP-01 | [![](https://status.dontddos.me/api/badge/2/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/2/uptime)](https://status.dontddos.me/status/homelab) |
+| K3s-CP-02 | [![](https://status.dontddos.me/api/badge/3/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/3/uptime)](https://status.dontddos.me/status/homelab) |
+| K3s-CP-03 | [![](https://status.dontddos.me/api/badge/4/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/4/uptime)](https://status.dontddos.me/status/homelab) |
+| K3s-Worker-01 | [![](https://status.dontddos.me/api/badge/5/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/5/uptime)](https://status.dontddos.me/status/homelab) |
+| K3s-Worker-02 | [![](https://status.dontddos.me/api/badge/6/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/6/uptime)](https://status.dontddos.me/status/homelab) |
+| K3s-Worker-03 | [![](https://status.dontddos.me/api/badge/7/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/7/uptime)](https://status.dontddos.me/status/homelab) |
 
 ## 📚 Skills Demonstrated
 
