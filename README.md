@@ -18,7 +18,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Scale**: I still consider this lab to be a relatively small one
 
 ## ✅ Status / Uptime
-Live status page: https://status.dontddos.me/status/homelab
+Status page: https://status.dontddos.me
 
 | Service | Status | Uptime (365d) |
 |---|---|---|
