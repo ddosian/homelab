@@ -15,3 +15,4 @@
 | ID  | Name         | IP   | VLAN | Cores | RAM (GB) | Storage (GB) | Host   | OS                  |
 | --- | ------------ | ---- | ---- | ----- | -------- | ------------ | ------ | ------------------- |
 | 103 | tailscale-01 | DHCP | 1    | 1     | 0.5      | 8            | pve-01 | Ubuntu Server 25.04 |
+| 107 | swears       | DHCP | 1    | 1     | 0.5      | 8            | pve-02 | Ubuntu Server 25.04 |
