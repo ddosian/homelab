@@ -18,7 +18,13 @@ jobs:
       - name: Install Hugo
         run: |
           sudo apt-get update
-          sudo apt-get install -y hugo rsync openssh-client git
+          sudo apt-get install -y wget tar openssh-client git
+          HUGO_VERSION=0.154.1
+          ARCH=Linux-64bit
+          wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_${ARCH}.tar.gz -O /tmp/hugo.tar.gz
+          tar -xzf /tmp/hugo.tar.gz -C /tmp
+          sudo mv /tmp/hugo /usr/local/bin/hugo
+          hugo version
 
       - name: Ensure submodules
         run: |
