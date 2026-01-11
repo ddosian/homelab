@@ -18,7 +18,7 @@ jobs:
       - name: Install Hugo
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget tar openssh-client git
+          sudo apt-get install -y wget tar openssh-client git rsync
           HUGO_VERSION=0.154.1
           ARCH=Linux-64bit
           wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_${ARCH}.tar.gz -O /tmp/hugo.tar.gz
@@ -45,5 +45,5 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no hugo-deploy@10.20.20.102 "mkdir -p /opt/containers/website/content && rm -rf /opt/containers/website/content/*"
-          scp -r public/* hugo-deploy@10.20.20.102:/opt/containers/website/content/
+          ssh -o StrictHostKeyChecking=no hugo-deploy@10.20.20.102 "mkdir -p /opt/containers/website/content"
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" public/ hugo-deploy@10.20.20.102:/opt/containers/website/content/
