@@ -1,0 +1,43 @@
+name: hugo deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Install Hugo
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y hugo rsync openssh-client git
+
+      - name: Ensure submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+
+      - name: Build site
+        run: |
+          hugo -s website -d public
+
+      - name: Configure SSH
+        env:
+          HUGO_DEPLOY_SSH_PRIVATE_KEY: ${{ secrets.HUGO_DEPLOY_SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$HUGO_DEPLOY_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no hugo-deploy@10.20.20.102 "mkdir -p /opt/containers/website/content && rm -rf /opt/containers/website/content/*"
+          scp -r public/* hugo-deploy@10.20.20.102:/opt/containers/website/content/
