@@ -3,6 +3,8 @@ name: hugo deploy
 on:
   push:
     branches: [ main ]
+    paths:
+      - "website/**"
 
 jobs:
   build-and-deploy:
