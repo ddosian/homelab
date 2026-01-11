@@ -4,7 +4,7 @@ services:
     image: rustdesk/rustdesk-server:latest
     command: hbbs
     volumes:
-      - ./data:/root
+      - /opt/containers/rustdesk/data:/root
     networks:
       - rustdesk
     ports:
@@ -20,7 +20,7 @@ services:
     image: rustdesk/rustdesk-server:latest
     command: hbbr
     volumes:
-      - ./data:/root
+      - /opt/containers/rustdesk/data:/root
     networks:
       - rustdesk
     ports:
