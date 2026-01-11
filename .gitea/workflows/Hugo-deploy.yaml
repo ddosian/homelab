@@ -18,7 +18,7 @@ jobs:
       - name: Install Hugo
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget tar openssh-client git
+          sudo apt-get install -y wget tar openssh-client git rsync
           HUGO_VERSION=0.154.1
           ARCH=Linux-64bit
           wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_${ARCH}.tar.gz -O /tmp/hugo.tar.gz
@@ -35,6 +35,16 @@ jobs:
         run: |
           hugo -s website -d public
 
+      - name: Show build output
+        run: |
+          echo "CWD: $(pwd)"
+          hugo version
+          hugo -s website env
+          echo "Listing repo root:" && ls -la
+          echo "Listing website:" && ls -la website || true
+          echo "Listing public:" && ls -la public || true
+          echo "Listing website/public:" && ls -la website/public || true
+
       - name: Configure SSH
         env:
           HUGO_DEPLOY_SSH_PRIVATE_KEY: ${{ secrets.HUGO_DEPLOY_SSH_PRIVATE_KEY }}
@@ -46,6 +56,20 @@ jobs:
 
       - name: Deploy to server
         run: |
-          echo "Deploying from website/public"
+          set -e
+          # detect source directory with built site
+          if [ -d public ] && [ "$(ls -A public 2>/dev/null)" ]; then
+            SRC=public
+          elif [ -d website/public ] && [ "$(ls -A website/public 2>/dev/null)" ]; then
+            SRC=website/public
+          else
+            echo "ERROR: no build output found in public/ or website/public/"
+            ls -la
+            exit 1
+          fi
+
+          echo "Deploying from $SRC"
+
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null hugo-deploy@10.20.20.102 "mkdir -p /opt/containers/website/content && rm -rf /opt/containers/website/content/*"
-          scp website/public/* hugo-deploy@10.20.20.102:/opt/containers/website/content/
+
+          rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" "$SRC"/ hugo-deploy@10.20.20.102:/opt/containers/website/content/
