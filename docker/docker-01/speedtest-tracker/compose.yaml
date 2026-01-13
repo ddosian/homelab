@@ -7,6 +7,7 @@ services:
       - PUID=1000
       - PGID=1000
       - APP_KEY=${APP_KEY}
+      - APP_URL=https://speedtest-tracker.local.dontddos.me
       - DB_CONNECTION=sqlite
       - PUBLIC_DASHBOARD=true
       - SPEEDTEST_SCHEDULE=*/5 * * * *
