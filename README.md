@@ -115,10 +115,13 @@ Status page: https://status.dontddos.me
 - [**Traefik**](kubernetes/traefik/traefik) - Proxy for internal HTTP traffic to Kubernetes
 - [**Nginx**](docker/multi-host/proxy/) - Proxy for internal HTTP traffic
 - **Tailscale** - Remote access via VPN
+
 ### Monitoring
 - [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/) - Uptime monitoring
 - [**Grafana**](kubernetes/monitoring/grafana/)
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
+- [**OpenSpeedTest**](docker/docker-01/openspeedtest/)
+
 ### Security
 - [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
 - [**Authentik**](docker/docker-02/authentik/) - SSO and OIDC
