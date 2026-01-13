@@ -122,7 +122,7 @@ Status page: https://status.dontddos.me
 - [**Grafana**](kubernetes/monitoring/grafana/)
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
 - [**OpenSpeedTest**](docker/docker-01/openspeedtest/)
-- [**LibreNMS**](kubernetes/monitoring/librenms/) - Network monitoring via SNMP
+- [**LibreNMS**](kubernetes/monitoring/librenms/) - Network monitoring via SNMP - [Docs](docs/networking/librenms.md)
 
 ### Security
 - [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
