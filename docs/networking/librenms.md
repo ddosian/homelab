@@ -1,4 +1,4 @@
-# LibreNMS - Network Monitoring System
+# [LibreNMS](/kubernetes/monitoring/librenms/) - Network Monitoring System
 
 [![](https://status.dontddos.me/api/badge/32/status)](https://status.dontddos.me) [![](https://status.dontddos.me/api/badge/32/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)
 
