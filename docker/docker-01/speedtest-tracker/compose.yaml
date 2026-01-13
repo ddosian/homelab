@@ -9,7 +9,7 @@ services:
       - APP_KEY=${APP_KEY}
       - DB_CONNECTION=sqlite
     volumes:
-      - ./data:/config
+      - /opt/containers/speedtest-tracker/data:/config
     networks:
       - proxy
     restart: unless-stopped
