@@ -2,5 +2,6 @@
   "cssTheme": "Catppuccin",
   "enabledCssSnippets": [
     "hide-tittle"
-  ]
+  ],
+  "textFontFamily": "Andale Mono"
 }
