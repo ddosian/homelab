@@ -8,6 +8,8 @@ services:
       - PGID=1000
       - APP_KEY=${APP_KEY}
       - DB_CONNECTION=sqlite
+      - PUBLIC_DASHBOARD=true
+      - SPEEDTEST_SCHEDULE=*/5 * * * *
     volumes:
       - /opt/containers/speedtest-tracker/data:/config
     networks:
