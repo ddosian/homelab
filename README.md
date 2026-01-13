@@ -49,7 +49,6 @@ Status page: https://status.dontddos.me
 | Prowlarr      | [![](https://status.dontddos.me/api/badge/24/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/24/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me/status/homelab) |
 | qBittorrent   | [![](https://status.dontddos.me/api/badge/25/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/25/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me/status/homelab) |
 | Mailcow       | [![](https://status.dontddos.me/api/badge/26/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/26/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me/status/homelab) |
-| Synapse       | [![](https://status.dontddos.me/api/badge/27/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/27/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me/status/homelab) |
 | Pelican       | [![](https://status.dontddos.me/api/badge/28/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/28/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me/status/homelab) |
 | Wings-01      | [![](https://status.dontddos.me/api/badge/29/status)](https://status.dontddos.me/status/homelab) | [![](https://status.dontddos.me/api/badge/29/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me/status/homelab) |
 
@@ -145,8 +144,7 @@ Status page: https://status.dontddos.me
 - **qBittorrent** - 😉
 
 ### Communication
-- **Mailcow** - mail
-- **Synapse** - Self-hosted, decentralised communication
+- **Mailcow** - Mail
 
 ### Games
 - [**Pelican**](docker/docker-02/pelican/) - Game panel
