@@ -155,7 +155,7 @@ Status page: https://status.dontddos.me
 - [**Pelican**](docker/docker-02/pelican/) - Game panel
 - **Wings** - Game servers
 
-## Remote management
+### Remote management
 - [**Rustdesk**](docker/docker-01/rustdesk/)
 
 ## 🌐 Network Architecture 
