@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: netbox
+  namespace: netbox
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`netbox.local.dontddos.me`)
+      kind: Rule
+      services:
+        - name: netbox-helm
+          port: 80
