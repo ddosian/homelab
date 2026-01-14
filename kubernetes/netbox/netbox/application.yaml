@@ -10,7 +10,7 @@ spec:
   project: default
   sources:
     - chart: netbox
-      repoURL: https://netbox-community.github.io/netbox-charts
+      repoURL: oci://ghcr.io/netbox-community/netbox-chart/netbox
       targetRevision: 7.3.1
   syncPolicy:
     syncOptions:
