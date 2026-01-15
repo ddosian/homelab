@@ -128,7 +128,7 @@ Status page: https://status.dontddos.me
 - [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
 - [**Authentik**](docker/docker-02/authentik/) - SSO and OIDC
 - **CrowdSec** - IPS monitoring for all incoming traffic
-- **Wazuh** - Security monitoring and SIEM
+- [**Wazuh**](docker/wazuh/wazuh/) - Security monitoring and SIEM
 - [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automated SSL/TLS certificate management
 
 ### Git & CI/CD
@@ -193,7 +193,7 @@ Arista DCS-7010T - Core L3 Switch
 - [x] Automated backups for all critical components (VMs, configurations, databases)
 - [x] Off-site backups with Backblaze B2
 - [ ] Implement Ansible for configuration management automation
-- [ ] Deploy LibreNMS for SNMP-based network monitoring
+- [x] Deploy LibreNMS for SNMP-based network monitoring
 - [ ] Add Netbox for network documentation and IPAM
 
 **Learning & Certification:**
