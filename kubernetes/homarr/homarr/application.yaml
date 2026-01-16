@@ -15,11 +15,8 @@ spec:
       helm: 
         values: |
           replicaCount: 3
-          persistence:
-            homarrDatabase:
-              enabled: true
-              storageClassName: "longhorn"
-              size: "3Gi"
+          database:
+            type: postgresql
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
