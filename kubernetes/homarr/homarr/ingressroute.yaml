@@ -1,0 +1,17 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: homarr
+  namespace: homarr
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`homarr.local.dontddos.me`)
+      kind: Rule
+      middlewares:
+        - name: homarr-basic-auth-basic-auth
+      services:
+        - name: homarr-helm
+          port: 3000
