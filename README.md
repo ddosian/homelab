@@ -44,6 +44,7 @@ Status page: https://status.dontddos.me
 | Argo CD       | [![](https://status.dontddos.me/api/badge/17/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/17/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Longhorn      | [![](https://status.dontddos.me/api/badge/18/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/18/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | TrueNAS       | [![](https://status.dontddos.me/api/badge/19/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/19/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
+| Nextcloud     | [![](https://status.dontddos.me/api/badge/34/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/34/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Jellyfin      | [![](https://status.dontddos.me/api/badge/20/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/20/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Jellyseerr    | [![](https://status.dontddos.me/api/badge/21/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/21/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Radarr        | [![](https://status.dontddos.me/api/badge/22/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/22/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
@@ -140,6 +141,7 @@ Status page: https://status.dontddos.me
 - [**Longhorn**](/kubernetes/longhorn-system/longhorn/) - Distributed block storage system for Kubernetes persistent volumes
 - [**CloudNative PG**](/kubernetes/cnpg-system/cnpg/)
 - **TrueNAS** - NAS solution
+- [**Nextcloud**](kubernetes/nextcloud/nextcloud/)
 
 ### Dashboards
 - [**Homarr**](kubernetes/homarr/homarr/)
