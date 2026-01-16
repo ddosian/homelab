@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextcloud
+  template:
+    metadata:
+      labels:
+        app: nextcloud
+    spec:
+      containers:
+      - name: nextcloud
+        image: "lscr.io/linuxserver/nextcloud:latest"
+        ports:
+        - containerPort: 443
+        env:
+        - name: "PUID"
+          value: "1000"
+        - name: "GUID"
+          value: "1000"
+        - name: "TZ"
+          value: "Etc/UTC"
+        volumeMounts:
+        - name: nextcloud-config
+          mountPath: /config
+        - name: nextcloud-data
+          mountPath: /data
+      volumes:
+      - name: nextcloud-config
+        persistentVolumeClaim:
+          claimName: nextcloud-config
+      - name: nextcloud-data
+        nfs:
+          server: "10.77.0.5"
+          path: "/mnt/store0/nextcloud"
