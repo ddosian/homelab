@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homarr-helm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: homarr
+  project: default
+  sources:
+    - chart: homarr
+      repoURL: https://homarr-labs.github.io/charts
+      targetRevision: 8.9.0
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
