@@ -2,7 +2,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: homarr-dbc
-  namespace: postgres
+  namespace: homarr
 spec:
   instances: 3
   monitoring:
