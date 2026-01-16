@@ -23,6 +23,7 @@ Status page: https://status.dontddos.me
 | Service       | Status                                                                                           | Uptime (365d)                                                                                                                       |
 | ------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
 | dontddos.me   | [![](https://status.dontddos.me/api/badge/30/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/30/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
+| Homarr        | [![](https://status.dontddos.me/api/badge/33/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/33/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | PVE-01        | [![](https://status.dontddos.me/api/badge/1/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/1/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
 | Portainer     | [![](https://status.dontddos.me/api/badge/8/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/8/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
 | K3s-CP-01     | [![](https://status.dontddos.me/api/badge/2/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/2/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
@@ -139,6 +140,9 @@ Status page: https://status.dontddos.me
 - [**Longhorn**](/kubernetes/longhorn-system/longhorn/) - Distributed block storage system for Kubernetes persistent volumes
 - [**CloudNative PG**](/kubernetes/cnpg-system/cnpg/)
 - **TrueNAS** - NAS solution
+
+### Dashboards
+- [**Homarr**](kubernetes/homarr/homarr/)
 
 ### Media Stack
 - [**Jellyfin**](docker/docker-02/jellyfin/) - Streaming
