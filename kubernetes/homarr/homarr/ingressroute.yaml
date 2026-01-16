@@ -10,8 +10,6 @@ spec:
   routes:
     - match: Host(`homarr.local.dontddos.me`)
       kind: Rule
-      middlewares:
-        - name: homarr-basic-auth-basic-auth
       services:
         - name: homarr-helm
           port: 7575
