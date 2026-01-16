@@ -12,6 +12,9 @@ spec:
     - chart: homarr
       repoURL: https://homarr-labs.github.io/charts
       targetRevision: 8.9.0
+      helm: 
+        values: |
+          replicaCount: 3
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
