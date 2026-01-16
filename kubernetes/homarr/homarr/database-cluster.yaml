@@ -16,5 +16,5 @@ spec:
     podAntiAffinityType: required
   bootstrap:
     initdb:
-      database: authentik
-      owner: authentik
+      database: homarr
+      owner: homarr
