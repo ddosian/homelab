@@ -11,7 +11,16 @@ spec:
   sources:
     - chart: nextcloud
       repoURL: https://gitea.dontddos.me/dontddos/nextcloud-helm/raw/branch/main/charts
-      targetRevision: v0.1.0
+      targetRevision: v0.1.1
+      helm: 
+        values: |
+          persistence:
+            data:
+              enabled: true
+              type: nfs
+              nfs:
+                server: "10.77.0.5"
+                path: "/mnt/store0/nextcloud"
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
