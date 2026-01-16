@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: nextcloud
       repoURL: https://gitea.dontddos.me/dontddos/nextcloud-helm/raw/branch/main/charts
-      targetRevision: v0.1.1
+      targetRevision: v0.1.2
       helm: 
         values: |
           persistence:
