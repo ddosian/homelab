@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nextcloud-helm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nextcloud
+  project: default
+  sources:
+    - chart: nextcloud
+      repoURL: https://gitea.dontddos.me/dontddos/nextcloud-helm/raw/branch/main/charts
+      targetRevision: v0.1.0
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
