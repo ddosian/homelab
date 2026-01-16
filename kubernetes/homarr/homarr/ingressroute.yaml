@@ -14,4 +14,4 @@ spec:
         - name: homarr-basic-auth-basic-auth
       services:
         - name: homarr-helm
-          port: 3000
+          port: 7575
