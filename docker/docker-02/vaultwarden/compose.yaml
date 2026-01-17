@@ -5,7 +5,7 @@ services:
     container_name: vaultwarden
     restart: unless-stopped
     environment:
-      DOMAIN: "https://vaultwarden.local.dontddos.me"
+      DOMAIN: "https://vaultwarden.dontddos.me"
       ADMIN_TOKEN: ${ADMIN_TOKEN}
     volumes:
       - /opt/containers/vaultwarden/data/:/data/
