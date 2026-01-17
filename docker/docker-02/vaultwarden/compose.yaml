@@ -10,8 +10,8 @@ services:
     volumes:
       - /opt/containers/vaultwarden/data/:/data/
     networks:
-      - proxy
+      - newt
 
 networks:
-  proxy:
+  newt:
     external: true
