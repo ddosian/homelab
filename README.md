@@ -36,7 +36,6 @@ Status page: https://status.dontddos.me
 | Adguard Home  | [![](https://status.dontddos.me/api/badge/10/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/10/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Pangolin      | [![](https://status.dontddos.me/api/badge/11/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/11/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Grafana       | [![](https://status.dontddos.me/api/badge/12/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/12/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| LibreNMS      | [![](https://status.dontddos.me/api/badge/32/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/32/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Vaultwarden   | [![](https://status.dontddos.me/api/badge/13/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/13/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Authentik     | [![](https://status.dontddos.me/api/badge/14/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/14/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Wazuh         | [![](https://status.dontddos.me/api/badge/15/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/15/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
@@ -124,7 +123,6 @@ Status page: https://status.dontddos.me
 - [**Grafana**](kubernetes/monitoring/grafana/)
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
 - [**OpenSpeedTest**](docker/docker-01/openspeedtest/)
-- [**LibreNMS**](kubernetes/monitoring/librenms/) - Network monitoring via SNMP - [Docs](docs/networking/librenms.md)
 
 ### Security
 - [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
@@ -199,7 +197,6 @@ Arista DCS-7010T - Core L3 Switch
 - [x] Automated backups for all critical components (VMs, configurations, databases)
 - [x] Off-site backups with Backblaze B2
 - [ ] Implement Ansible for configuration management automation
-- [x] Deploy LibreNMS for SNMP-based network monitoring
 - [ ] Add Netbox for network documentation and IPAM
 
 **Learning & Certification:**
