@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n
+spec:
+  selector:
+    matchLabels:
+      app: n8n
+  template:
+    metadata:
+      labels:
+        app: n8n
+    spec:
+      containers:
+      - name: n8n
+        image: docker.n8n.io/n8nio/n8n
+        ports:
+        - containerPort: 5678
+        env:
+          - name: "GENERIC_TIMEZONE"
+            value: "Etc/UTC"
+          - name: "TZ"
+            value: "Etc/UTC"
+          - name: "N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS"
+            value: "true"
+          - name: "N8N_RUNNERS_ENABLED"
+            value: "true"
+        volumeMounts:
+        - name: n8n-data
+          mountPath: /home/node/.n8n
+      volumes:
+      - name: n8n-data
+        persistentVolumeClaim:
+          claimName: n8n-data
