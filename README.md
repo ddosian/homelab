@@ -14,7 +14,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 **About Me:**
 - **Age:** 16
 - **Location:** London, England
-- **Experience:** 2+ years self-directed learning and hands-on infrastructure deployment
+- **Experience:** 2+ years of homelab
 - **Career Goal:** Datacenter/Network Engineer
 - **Current Focus:** GCSEs & CCNA certification
 
