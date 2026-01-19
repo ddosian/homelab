@@ -119,6 +119,7 @@ Status page: https://status.dontddos.me
 - **Mailcow** - Mail
 
 ### Automation
+- [**ansible**](ansible/)
 - [**n8n**](kubernetes/n8n/n8n/)
 
 ### Games
