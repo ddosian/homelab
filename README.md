@@ -5,11 +5,8 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 ## 📋 Table of Contents
 - [Overview](#-overview)
 - [Status / Uptime](#-status--uptime)
-- [Skills Demonstrated](#-skills-demonstrated)
 - [Hardware](#-hardware)
 - [Services, Applications & Deployments](#-services-applications--deployments)
-- [Network Architecture](#-network-architecture)
-- [Goals for the Future](#-goals-for-the-future)
 - [Links](#-links)
 ## 👁️ Overview
 - **Lab Started**: 4th January 2026
@@ -54,40 +51,6 @@ Status page: https://status.dontddos.me
 | Pelican       | [![](https://status.dontddos.me/api/badge/28/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/28/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Wings-01      | [![](https://status.dontddos.me/api/badge/29/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/29/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 
-## 📚 Skills Demonstrated
-
-**Networking:**
-- Enterprise switching (Arista DCS-7010T)
-- VLAN configuration and inter-VLAN routing
-- Firewall management and security policies (pfSense)
-- Network segmentation (DMZ, management, isolated workload VLANs)
-- DNS management (AdGuard Home)
-- VPN configuration (Tailscale)
-
-**Infrastructure & Virtualisation:**
-- Virtualisation platforms (Proxmox VE)
-- Container orchestration (Kubernetes/K3s)
-- High availability design (3-node control plane with keepalived VIP)
-- Hybrid ARM/x86 architecture
-- Distributed storage (Longhorn)
-
-**DevOps & Automation:**
-- GitOps continuous delivery (ArgoCD)
-- Infrastructure as Code (Kubernetes manifests in Git)
-- Configuration management
-- Automated certificate management (Cert Manager)
-- CI/CD concepts
-
-**Security:**
-- SIEM implementation (Wazuh)
-- Intrusion detection/prevention (CrowdSec)
-- Single sign-on (Authentik)
-- Network security architecture
-- Automated SSL/TLS management
-
-**Operations:**
-- Service monitoring (Prometheus + Grafana)
-- Container management (Portainer)
 ## 🖥️ Hardware
 
 | Component     | Model / Specs                                                     | Role                     |
@@ -164,50 +127,6 @@ Status page: https://status.dontddos.me
 
 ### Remote management
 - [**Rustdesk**](docker/docker-01/rustdesk/)
-
-## 🌐 Network Architecture 
-**Network Topology:** 
-``` 
-Internet
-	↓
-pfSense (10.77.0.1) - Edge Firewall/Router
-	↓
-Arista DCS-7010T - Core L3 Switch
-	↓
-	├─ VLAN 1 (10.77.0.0/16) - Default/LAN
-	├─ VLAN 10 (10.20.10.0/24) - Management
-	├─ VLAN 20 (10.20.20.0/24) - DMZ (Public Services)
-	├─ VLAN 30 (10.20.30.0/24) - Games/Wings
-	└─ VLAN 40 (10.20.40.0/24) - Kubernetes Cluster
-```
-**Key Features:**
-- Segmented VLANs for security and organisation
-- Arista DCS-7010T providing L3 switching
-- pfSense handling firewall rules and DHCP
-- AdGuard Home for DNS filtering across all VLANs
-**Security Measures:** 
-- DMZ isolation for internet-facing services 
-- Kubernetes workloads on isolated VLAN 
-- Firewall rules controlling inter-VLAN traffic 
-- CrowdSec IPS monitoring all incoming traffic
-- Wazuh SIEM for security event analysis
-
-**Detailed network documentation:** [docs/networking.md](docs/networking.md)
-
-## 🎯 Goals for the Future
-
-**Infrastructure Improvements:**
-- [x] Automated backups for all critical components (VMs, configurations, databases)
-- [x] Off-site backups with Backblaze B2
-- [ ] Implement Ansible for configuration management automation
-- [ ] Add Netbox for network documentation and IPAM
-
-**Learning & Certification:**
-- [ ] Complete CCNA certification
-- [ ] Expand monitoring with custom Grafana dashboards
-- [ ] Learn Terraform for infrastructure provisioning
-- [ ] Implement full GitOps workflow for all services
-
 
 ## 🔗 Links 
 - **Status Page:** https://status.dontddos.me
