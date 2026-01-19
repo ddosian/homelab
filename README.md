@@ -155,6 +155,9 @@ Status page: https://status.dontddos.me
 ### Communication
 - **Mailcow** - Mail
 
+### Automation
+- [**n8n**](kubernetes/n8n/n8n/)
+
 ### Games
 - [**Pelican**](docker/docker-02/pelican/) - Game panel
 - **Wings** - Game servers
