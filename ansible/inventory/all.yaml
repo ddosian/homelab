@@ -1,8 +1,8 @@
-imgress
-mail
-pfsense
-arista
-pve-01
+root@ingress
+root@mail
+root@pfsense
+admin@arista
+root@pve-01
 docker-01
 docker-02
 wings-01
