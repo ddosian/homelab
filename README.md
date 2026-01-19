@@ -4,6 +4,7 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ## 📋 Table of Contents
 - [Overview](#-overview)
+- [Physical Setup](#-physical-setup)
 - [Status / Uptime](#-status--uptime)
 - [Hardware](#-hardware)
 - [Services, Applications & Deployments](#-services-applications--deployments)
@@ -13,6 +14,10 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - **Purpose**: to learn more about networking, infrastructure management, git, CI/CD and other IT related topics
 - **Contents**: this git repo contains most, if not all, of my homelab infrastructure
 - **Scale**: I still consider this lab to be a relatively small one
+
+## 📸 Physical Setup
+
+![Lab](imgs/lab.png)
 
 ## ✅ Status / Uptime
 Status page: https://status.dontddos.me
