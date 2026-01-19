@@ -1,0 +1,24 @@
+---
+- name: Update and upgrade apt packages on Ubuntu hosts
+  hosts: ubuntu
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      tags: [update]
+
+    - name: Upgrade installed packages (safe upgrade)
+      ansible.builtin.apt:
+        upgrade: yes
+      tags: [upgrade]
+
+    - name: Autoremove unused packages
+      ansible.builtin.apt:
+        autoremove: yes
+      tags: [cleanup]
+
+    - name: Autoclean apt cache
+      ansible.builtin.apt:
+        autoclean: yes
+      tags: [cleanup]
