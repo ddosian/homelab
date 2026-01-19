@@ -10,7 +10,17 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 - [Services, Applications & Deployments](#-services-applications--deployments)
 - [Links](#-links)
 ## 👁️ Overview
-- **Lab Started**: 4th January 2026
+
+**About Me:**
+- **Age:** 16
+- **Location:** London, England
+- **Experience:** 2+ years self-directed learning and hands-on infrastructure deployment
+- **Career Goal:** Datacenter/Network Engineer
+- **Current Focus:** GCSEs & CCNA certification
+
+**About This Lab:**
+- **Current Lab Started**: 4th January 2026
+- **First Lab**: mid 2024 - late 2025 (estimate)
 - **Purpose**: to learn more about networking, infrastructure management, git, CI/CD and other IT related topics
 - **Contents**: this git repo contains most, if not all, of my homelab infrastructure
 - **Scale**: I still consider this lab to be a relatively small one
