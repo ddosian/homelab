@@ -1,4 +1,6 @@
 # Guacamole
+[![](https://status.dontddos.me/api/badge/36/status)](https://status.dontddos.me) [![](https://status.dontddos.me/api/badge/36/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)
+
 
 ## Initialise DB
 Do this BEFORE starting the stack
