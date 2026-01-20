@@ -154,6 +154,7 @@ Status page: https://status.dontddos.me
 
 ### Remote management
 - [**Rustdesk**](docker/docker-01/rustdesk/)
+- [**Guacamole**](docker/docker-01/guacamole/)
 
 ## 🔗 Links 
 - **Status Page:** https://status.dontddos.me
