@@ -38,14 +38,12 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 </details>
 
 ## ✅ Status / Uptime
-Status page: https://status.dontddos.me
+Full Status page: https://status.dontddos.me
 
 | Service       | Status                                                                                           | Uptime (365d)                                                                                                                       |
 | ------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
 | dontddos.me   | [![](https://status.dontddos.me/api/badge/30/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/30/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Homarr        | [![](https://status.dontddos.me/api/badge/33/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/33/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | PVE-01        | [![](https://status.dontddos.me/api/badge/1/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/1/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
-| Portainer     | [![](https://status.dontddos.me/api/badge/8/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/8/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
 | K3s-CP-01     | [![](https://status.dontddos.me/api/badge/2/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/2/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
 | K3s-CP-02     | [![](https://status.dontddos.me/api/badge/3/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/3/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
 | K3s-CP-03     | [![](https://status.dontddos.me/api/badge/4/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/4/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
@@ -53,28 +51,6 @@ Status page: https://status.dontddos.me
 | K3s-Worker-02 | [![](https://status.dontddos.me/api/badge/6/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/6/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
 | K3s-Worker-03 | [![](https://status.dontddos.me/api/badge/7/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/7/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
 | pfSense       | [![](https://status.dontddos.me/api/badge/9/status)](https://status.dontddos.me)  | [![](https://status.dontddos.me/api/badge/9/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)  |
-| Adguard Home  | [![](https://status.dontddos.me/api/badge/10/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/10/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Pangolin      | [![](https://status.dontddos.me/api/badge/11/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/11/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| LibreNMS       | [![](https://status.dontddos.me/api/badge/35/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/35/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Grafana       | [![](https://status.dontddos.me/api/badge/12/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/12/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Vaultwarden   | [![](https://status.dontddos.me/api/badge/13/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/13/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Authentik     | [![](https://status.dontddos.me/api/badge/14/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/14/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Wazuh         | [![](https://status.dontddos.me/api/badge/15/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/15/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Gitea         | [![](https://status.dontddos.me/api/badge/16/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/16/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Argo CD       | [![](https://status.dontddos.me/api/badge/17/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/17/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Longhorn      | [![](https://status.dontddos.me/api/badge/18/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/18/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| TrueNAS       | [![](https://status.dontddos.me/api/badge/19/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/19/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Nextcloud     | [![](https://status.dontddos.me/api/badge/34/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/34/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Jellyfin      | [![](https://status.dontddos.me/api/badge/20/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/20/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Jellyseerr    | [![](https://status.dontddos.me/api/badge/21/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/21/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Radarr        | [![](https://status.dontddos.me/api/badge/22/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/22/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Sonarr        | [![](https://status.dontddos.me/api/badge/23/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/23/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Prowlarr      | [![](https://status.dontddos.me/api/badge/24/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/24/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| qBittorrent   | [![](https://status.dontddos.me/api/badge/25/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/25/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Mailcow       | [![](https://status.dontddos.me/api/badge/26/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/26/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Pelican       | [![](https://status.dontddos.me/api/badge/28/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/28/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Wings-01      | [![](https://status.dontddos.me/api/badge/29/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/29/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
-| Guacamole     | [![](https://status.dontddos.me/api/badge/36/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/36/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 
 
 ## 🖥️ Hardware
@@ -147,7 +123,8 @@ Status page: https://status.dontddos.me
 - **Mailcow** - Mail
 
 ### Automation
-- [**ansible**](ansible/)
+- [**Ansible**](ansible/)
+- [**Semaphore**](kubernetes/semaphore/semaphore/)
 - [**n8n**](kubernetes/n8n/n8n/)
 
 ### Games
