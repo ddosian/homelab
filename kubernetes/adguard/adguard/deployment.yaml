@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adguard-home
+  namespace: adguard
+spec:
+  selector:
+    matchLabels:
+      app: adguard-home
+  template:
+    metadata:
+      labels:
+        app: adguard-home
+    spec:
+      containers:
+      - name: adguard-home
+        image: adguard/adguardhome
+        ports:
+        - containerPort: 80
+        - containerPort: 3000
+        - containerPort: 53
+        volumeMounts:
+        - name: adguard-home-work
+          mountPath: /opt/adguardhome/work
+        - name: adguard-home-conf
+          mountPath: /opt/adguardhome/conf
+      volumes:
+      - name: adguard-home-work
+        persistentVolumeClaim:
+          claimName: adguard-home-work
+      - name: adguard-home-conf
+        persistentVolumeClaim:
+          claimName: adguard-home-conf
+
