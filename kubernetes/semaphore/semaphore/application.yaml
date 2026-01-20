@@ -20,6 +20,11 @@ spec:
             host: semaphore-dbc-rw
             port: 5432
             existingSecret: semaphore-dbc-app
+          admin:
+            fullname: DontDDoS
+            username: ddos
+            email: admin@dontddos.me
+            existingSecret: semaphore-admin
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
