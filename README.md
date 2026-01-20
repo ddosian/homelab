@@ -29,6 +29,14 @@ If you are viewing on GitHub, you can view this repo on my self-hosted instance 
 
 ![Lab](imgs/lab.png)
 
+<details>
+<summary>Show More</summary>
+
+### Pi cluster
+![Pis](imgs/pis.png)
+
+</details>
+
 ## ✅ Status / Uptime
 Status page: https://status.dontddos.me
 
