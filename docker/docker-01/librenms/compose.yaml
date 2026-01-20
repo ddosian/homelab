@@ -11,7 +11,7 @@ services:
       - "--character-set-server=utf8mb4"
       - "--collation-server=utf8mb4_unicode_ci"
     volumes:
-      - "./db:/var/lib/mysql"
+      - "/opt/containers/librenms/db:/var/lib/mysql"
     environment:
       - "TZ=${TZ}"
       - "MARIADB_RANDOM_ROOT_PASSWORD=yes"
@@ -60,7 +60,7 @@ services:
       - redis
       - msmtpd
     volumes:
-      - "./librenms:/data"
+      - "/opt/containers/librenms/librenms:/data"
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -99,7 +99,7 @@ services:
       - librenms
       - redis
     volumes:
-      - "./librenms:/data"
+      - "/opt/containers/librenms/librenms:/data"
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -146,7 +146,7 @@ services:
         published: 514
         protocol: udp
     volumes:
-      - "./librenms:/data"
+      - "/opt/containers/librenms/librenms:/data"
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -192,7 +192,7 @@ services:
         published: 162
         protocol: udp
     volumes:
-      - "./librenms:/data"
+      - "/opt/containers/librenms/librenms:/data"
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
