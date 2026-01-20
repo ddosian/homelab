@@ -2,7 +2,7 @@
 [![](https://status.dontddos.me/api/badge/36/status)](https://status.dontddos.me) [![](https://status.dontddos.me/api/badge/36/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me)
 
 - **Deployment date:** 20th January 2026
-- *Web UI:* https://guacamole.local.dontddos.me/guacamole
+- **Web UI:** https://guacamole.local.dontddos.me/guacamole
 
 ## Initialise DB
 Do this BEFORE starting the stack
