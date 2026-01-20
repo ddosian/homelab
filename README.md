@@ -100,7 +100,9 @@ Status page: https://status.dontddos.me
 - [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/) - Uptime monitoring
 - [**Grafana**](kubernetes/monitoring/grafana/)
 - [**Prometheus**](kubernetes/monitoring/prometheus/)
+- [**LibreNMS**](kubernetes/monitoring/librenms/) - SNMP based network monitoring
 - [**OpenSpeedTest**](docker/docker-01/openspeedtest/)
+
 
 ### Security
 - [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
