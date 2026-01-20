@@ -1,0 +1,13 @@
+---
+services:
+  adguard-home-sync:
+    image: lscr.io/linuxserver/adguardhome-sync:latest
+    container_name: adguard-home-sync
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - CONFIGFILE=/config/adguardhome-sync.yaml
+    volumes:
+      - /opt/containers/adguard-home-sync/config:/config
+    restart: unless-stopped
