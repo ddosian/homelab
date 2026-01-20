@@ -21,6 +21,11 @@ spec:
             port: 5432
             existingSecret: semaphore-dbc-app
           admin:
+            create: true
+            fullname: DontDDoS
+            username: ddos
+            email: admin@dontddos.me
+            passwordKey: password
             existingSecret: semaphore-admin
   syncPolicy:
     syncOptions:
