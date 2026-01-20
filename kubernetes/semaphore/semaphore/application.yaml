@@ -22,7 +22,6 @@ spec:
             existingSecret: semaphore-dbc-app
           admin:
             create: true
-            fullname: DontDDoS
             username: ddos
             email: admin@dontddos.me
             passwordKey: password
