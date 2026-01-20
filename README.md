@@ -74,6 +74,8 @@ Status page: https://status.dontddos.me
 | Mailcow       | [![](https://status.dontddos.me/api/badge/26/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/26/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Pelican       | [![](https://status.dontddos.me/api/badge/28/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/28/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
 | Wings-01      | [![](https://status.dontddos.me/api/badge/29/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/29/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
+| Guacamole     | [![](https://status.dontddos.me/api/badge/36/status)](https://status.dontddos.me) | [![](https://status.dontddos.me/api/badge/36/uptime?duration=365&label=Uptime%20(365d))](https://status.dontddos.me) |
+
 
 ## 🖥️ Hardware
 
