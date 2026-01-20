@@ -14,7 +14,7 @@ spec:
       targetRevision: 16.0.11
       helm:
         values: |
-          replicaCount: 3
+          replicaCount: 1
           database:
             type: postgres
             host: semaphore-dbc-rw
