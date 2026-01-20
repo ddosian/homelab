@@ -14,7 +14,9 @@ spec:
       targetRevision: 2.33.6
       helm:
         parameters:
-          - name: image.tag
+          - name: "enterpriseEdition.enabled"
+            value: "true"
+          - name: "enterpriseEdition.image.tag"
             value: "lts"
   syncPolicy:
     syncOptions:
