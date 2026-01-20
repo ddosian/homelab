@@ -8,7 +8,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`adguard-home-02.local.dontddos.me`)
+    - match: Host(`adguard-02.local.dontddos.me`)
       kind: Rule
       services:
         - name: adguard-home-http
