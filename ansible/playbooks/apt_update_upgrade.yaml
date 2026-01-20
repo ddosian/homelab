@@ -1,6 +1,8 @@
 ---
 - name: Update and upgrade apt packages on Ubuntu hosts
   hosts: ubuntu
+  become: yes
+  become_method: sudo
   tasks:
     - name: Update apt cache
       ansible.builtin.apt:
