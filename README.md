@@ -67,7 +67,7 @@ Full Status page: https://status.dontddos.me
 | K3s-Worker-02 | HP EliteDesk G4 800<br>Intel i5 8600<br>16GB RAM                  | Kubernetes worker        |
 | K3s-Worker-03 | HP EliteDesk G4 800<br>Intel i5 8600<br>16GB RAM                  | Kubernetes worker        |
 | TrueNAS       | AMD FX-6100<br>24GB RAM<br>8TB Storage                            | Storage                  |
-| OpenStack-01  | HP EliteDesk G4 705<br>AMD Ryzen 5 PRO 2400GE<br>48GB RAM           | OpenStack                |
+| OpenStack-01  | HP EliteDesk G4 705<br>AMD Ryzen 5 PRO 2400GE<br>48GB RAM         | OpenStack                |
 
 ##  🚀 Services, Applications & Deployments
 
