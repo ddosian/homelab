@@ -1,0 +1,52 @@
+---
+- name: Install wazuh agent
+  hosts: debian_based
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Download Wazuh agent package
+      get_url:
+        url: https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_amd64.deb
+        dest: /tmp/wazuh-agent_4.14.1-1_amd64.deb
+        mode: '0644'
+      tags: [download]
+
+    - name: Install Wazuh agent with manager configuration
+      environment:
+        WAZUH_MANAGER: 'wazuh.local.dontddos.me'
+        WAZUH_AGENT_NAME: '{{ inventory_hostname }}'
+      apt:
+        deb: /tmp/wazuh-agent_4.14.1-1_amd64.deb
+        state: present
+      tags: [install]
+
+    - name: Start and enable Wazuh agent service
+      systemd:
+        name: wazuh-agent
+        state: started
+        enabled: yes
+        daemon_reload: yes
+      tags: [service]
+
+    - name: Check Wazuh agent status
+      systemd:
+        name: wazuh-agent
+      register: wazuh_status
+      tags: [status]
+
+    - name: Display Wazuh agent status
+      debug:
+        msg: |
+          Wazuh agent status on {{ inventory_hostname }}:
+          State: {{ wazuh_status.status.ActiveState }}
+          Enabled: {{ wazuh_status.status.UnitFileState }}
+          Manager: wazuh.local.dontddos.me
+          Agent Name: {{ inventory_hostname }}
+      tags: [status]
+
+    - name: Clean up downloaded package
+      file:
+        path: /tmp/wazuh-agent_4.14.1-1_amd64.deb
+        state: absent
+      tags: [cleanup]
+      
