@@ -69,71 +69,71 @@ Full Status page: https://status.dontddos.me
 | TrueNAS       | AMD FX-6100<br>24GB RAM<br>8TB Storage                            | Storage                  |
 
 ##  🚀 Services, Applications & Deployments
+
 ### Infrastructure
-- [**Proxmox VE**](docs/infrastructure/proxmox-ve.md) - Type 1 hypervisor
-- [**Portainer**](kubernetes/portainer/portainer) - Kubernetes & Docker management GUI
-- [**Kubernetes**](docs/infrastructure/kubernetes.md) - Container orchestration
-- **Docker** - Containerisation 
+- [**Proxmox VE**](docs/infrastructure/proxmox-ve.md) - Type 1 hypervisor used to run and manage virtual machines and containers on the homelab server.
+- [**Portainer**](kubernetes/portainer/portainer) - Lightweight web UI for managing Docker and Kubernetes resources across hosts and clusters.
+- [**Kubernetes**](docs/infrastructure/kubernetes.md) - k3s-based container orchestration platform for running most services in the cluster.
+- **Docker** - Container runtime used for lightweight services and quick deployments outside Kubernetes.
 
 ### Networking
-- **pfSense** - Edge firewall, DHCP
-- [**AdGuard Home**](docker/docker-01/adguard-home/) - DNS
-- **Pangolin** - Reverse proxy for external HTTP traffic (internet-facing)
-- [**Traefik**](kubernetes/traefik/traefik) - Proxy for internal HTTP traffic to Kubernetes
-- [**Nginx**](docker/multi-host/proxy/) - Proxy for internal HTTP traffic
-- **Tailscale** - Remote access via VPN
+- **pfSense** - Edge firewall, VLAN routing and DHCP provider for the lab network.
+- [**AdGuard Home**](docker/docker-01/adguard-home/) - DNS-level ad and tracker blocking for the entire network.
+- **Pangolin** - Public-facing reverse proxy securing and routing external HTTP/S traffic to internal services.
+- [**Traefik**](kubernetes/traefik/traefik) - In-cluster ingress controller routing HTTP/S traffic to Kubernetes services.
+- [**Nginx**](docker/multi-host/proxy/) - Reverse proxy and TLS termination for Docker-based services not in Kubernetes.
+- **Tailscale** - WireGuard-based mesh VPN for secure remote access to the lab.
 
 ### Monitoring
-- [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/) - Uptime monitoring
-- [**Grafana**](kubernetes/monitoring/grafana/)
-- [**Prometheus**](kubernetes/monitoring/prometheus/)
-- [**OpenSpeedTest**](docker/docker-01/openspeedtest/)
-
+- [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/) - Simple uptime and alerting dashboard for HTTP/ICMP checks.
+- [**Grafana**](kubernetes/monitoring/grafana/) - Dashboarding and visualization for metrics and logs.
+- [**Prometheus**](kubernetes/monitoring/prometheus/) - Metrics collection and alerting for cluster and service monitoring.
+- [**OpenSpeedTest**](docker/docker-01/openspeedtest/) - Browser-based network speed testing hosted on the lab.
 
 ### Security
-- [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
-- [**Authentik**](docker/docker-02/authentik/) - SSO and OIDC
-- **CrowdSec** - IPS monitoring for all incoming traffic
-- **Fail2Ban**
-- [**Wazuh**](docker/wazuh/wazuh/) - Security monitoring and SIEM
-- [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automated SSL/TLS certificate management
+- [**Vaultwarden**](docker/docker-01/vaultwarden/) - Self-hosted password manager compatible with Bitwarden clients.
+- [**Authentik**](docker/docker-02/authentik/) - Identity provider offering SSO, LDAP/SSO integration and OIDC authentication.
+- **CrowdSec** - Collaborative IPS that analyzes logs and blocks abusive IPs across services.
+- **Fail2Ban** - Simple intrusion prevention that bans IPs showing malicious behaviour on exposed services.
+- [**Wazuh**](docker/wazuh/wazuh/) - Host and security monitoring, SIEM-style alerting and log analysis.
+- [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automates issuance and renewal of TLS certificates inside Kubernetes.
 
 ### Git & CI/CD
-- [**Gitea**](docker/docker-02/gitea/) - Self-hosted Git service
-- **ArgoCD** - Continuous delivery tool for Kubernetes deployments
+- [**Gitea**](docker/docker-02/gitea/) - Lightweight self-hosted Git hosting for repositories and basic CI integrations.
+- **ArgoCD** - GitOps continuous deployment tool that reconciles Kubernetes manifests stored in Git to the cluster.
 
 ### Storage
-- [**Longhorn**](/kubernetes/longhorn-system/longhorn/) - Distributed block storage system for Kubernetes persistent volumes
-- [**CloudNative PG**](/kubernetes/cnpg-system/cnpg/)
-- **TrueNAS** - NAS solution
-- [**Nextcloud**](kubernetes/nextcloud/nextcloud/)
+- [**Longhorn**](/kubernetes/longhorn-system/longhorn/) - Distributed block storage solution for persistent volumes in Kubernetes.
+- [**CloudNative PG**](/kubernetes/cnpg-system/cnpg/) - PostgreSQL operator for running clustered/managed Postgres in Kubernetes.
+- **TrueNAS** - Central NAS for bulk storage, backups and ISO/media hosting.
+- [**Nextcloud**](kubernetes/nextcloud/nextcloud/) - Self-hosted file sync, calendar, contacts and collaboration platform.
 
 ### Dashboards
-- [**Homarr**](kubernetes/homarr/homarr/)
+- [**Homarr**](kubernetes/homarr/homarr/) - User-facing application dashboard to quickly access and visualise services and links.
 
 ### Media Stack
-- [**Jellyfin**](docker/docker-02/jellyfin/) - Streaming
-- [**Jellyseerr**](docker/docker-02/jellyseerr) - Requests
-- **Radarr** - Movie index manager
-- **Sonarr** - Show index manager
-- **Prowlarr** - Torrent manager
-- **qBittorrent** - 😉
+- [**Jellyfin**](docker/docker-02/jellyfin/) - Media server for streaming personal video and audio collections.
+- [**Jellyseerr**](docker/docker-02/jellyseerr) - Requests manager for Jellyfin (requesting and approval workflow).
+- **Radarr** - Movie collection manager and automatic downloader for new releases.
+- **Sonarr** - TV show collection manager and automatic episode downloader.
+- **Prowlarr** - Indexer manager that integrates with Sonarr/Radarr to manage torrent/usenet indexers.
+- **qBittorrent** - Torrent client used by download automation tools.
 
 ### Communication
-- **Mailcow** - Mail
+- **Mailcow** - Full mail server suite providing mailboxes, webmail and spam/virus filtering for personal domains.
 
 ### Automation
-- [**Ansible**](ansible/)
-- [**Semaphore**](kubernetes/semaphore/semaphore/)
-- [**n8n**](kubernetes/n8n/n8n/)
+- [**Ansible**](ansible/) - Configuration management and orchestration used for provisioning hosts and services.
+- [**Semaphore**](kubernetes/semaphore/semaphore/) - Self-hosted job runner for automation tasks and playbook execution.
+- [**n8n**](kubernetes/n8n/n8n/) - Workflow automation/orchestration for integrating APIs and automating repetitive tasks.
 
 ### Games
-- [**Pelican**](docker/docker-02/pelican/) - Game panel
-- **Wings** - Game servers
+- [**Pelican**](docker/docker-02/pelican/) - Game panel for hosting and managing game servers.
+- **Wings** - Game server management stack (backend for some game servers).
 
 ### Remote management
-- [**Rustdesk**](docker/docker-01/rustdesk/)
-- [**Guacamole**](docker/docker-01/guacamole/)
+- [**Rustdesk**](docker/docker-01/rustdesk/) - Remote desktop solution for ad-hoc support and remote access.
+- [**Guacamole**](docker/docker-01/guacamole/) - Browser-based remote desktop gateway (RDP/VNC/SSH) for managing systems.
 
 ## 🔗 Links 
 - **Status Page:** https://status.dontddos.me
