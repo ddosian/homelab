@@ -1,5 +1,5 @@
 ---
-- name: Install wazuh agent
+- name: Install wazuh agent on Debian based systems
   hosts: debian_based
   become: yes
   become_method: sudo
