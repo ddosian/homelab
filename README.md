@@ -94,7 +94,7 @@ Full Status page: https://status.dontddos.me
 - [**Vaultwarden**](docker/docker-01/vaultwarden/) - Password manager
 - [**Authentik**](docker/docker-02/authentik/) - SSO and OIDC
 - **CrowdSec** - IPS monitoring for all incoming traffic
-- Fail2Ban
+- **Fail2Ban**
 - [**Wazuh**](docker/wazuh/wazuh/) - Security monitoring and SIEM
 - [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automated SSL/TLS certificate management
 
