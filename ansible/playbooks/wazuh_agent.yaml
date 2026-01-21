@@ -4,10 +4,31 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: Download Wazuh agent package
+    - name: Detect system architecture
+      setup:
+        gather_subset: hardware
+      tags: [detect]
+
+    - name: Set architecture-specific variables
+      set_fact:
+        wazuh_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
+        wazuh_package_url: "{{ 'https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_arm64.deb' if ansible_architecture == 'aarch64' else 'https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_amd64.deb' }}"
+        wazuh_package_file: "{{ 'wazuh-agent_4.14.1-1_arm64.deb' if ansible_architecture == 'aarch64' else 'wazuh-agent_4.14.1-1_amd64.deb' }}"
+      tags: [detect]
+
+    - name: Display detected architecture
+      debug:
+        msg: |
+          Host: {{ inventory_hostname }}
+          Detected Architecture: {{ ansible_architecture }}
+          Using Package: {{ wazuh_arch }}
+          Download URL: {{ wazuh_package_url }}
+      tags: [detect]
+
+    - name: Download Wazuh agent package (architecture-specific)
       get_url:
-        url: https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_amd64.deb
-        dest: /tmp/wazuh-agent_4.14.1-1_amd64.deb
+        url: "{{ wazuh_package_url }}"
+        dest: "/tmp/{{ wazuh_package_file }}"
         mode: '0644'
       tags: [download]
 
@@ -16,7 +37,7 @@
         WAZUH_MANAGER: 'wazuh.local.dontddos.me'
         WAZUH_AGENT_NAME: '{{ inventory_hostname }}'
       apt:
-        deb: /tmp/wazuh-agent_4.14.1-1_amd64.deb
+        deb: "/tmp/{{ wazuh_package_file }}"
         state: present
       tags: [install]
 
@@ -38,15 +59,16 @@
       debug:
         msg: |
           Wazuh agent status on {{ inventory_hostname }}:
+          Architecture: {{ wazuh_arch }}
           State: {{ wazuh_status.status.ActiveState }}
           Enabled: {{ wazuh_status.status.UnitFileState }}
           Manager: wazuh.local.dontddos.me
           Agent Name: {{ inventory_hostname }}
+          Package: {{ wazuh_package_file }}
       tags: [status]
 
     - name: Clean up downloaded package
       file:
-        path: /tmp/wazuh-agent_4.14.1-1_amd64.deb
+        path: "/tmp/{{ wazuh_package_file }}"
         state: absent
       tags: [cleanup]
-      
