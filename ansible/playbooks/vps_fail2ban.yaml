@@ -1,0 +1,38 @@
+- name: Install and configure fail2ban
+  hosts: vps
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Install fail2ban
+      apt:
+        name: fail2ban
+        state: present
+        update_cache: yes
+
+    - name: Configure jail.local
+      copy:
+        dest: /etc/fail2ban/jail.local
+        owner: root
+        mode: '0644'
+        content: |
+          [DEFAULT]
+          bantime = 10m
+          findtime = 10m
+          maxretry = 5
+
+          [sshd]
+          enabled = true
+          port = 22
+      notify: Restart fail2ban
+
+    - name: Ensure fail2ban is running
+      service:
+        name: fail2ban
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: Restart fail2ban
+      service:
+        name: fail2ban
+        state: restarted
