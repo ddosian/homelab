@@ -1,6 +1,6 @@
 ---
 - name: Update and upgrade apt packages on Ubuntu hosts
-  hosts: ubuntu
+  hosts: debian_based
   become: yes
   become_method: sudo
   tasks:
