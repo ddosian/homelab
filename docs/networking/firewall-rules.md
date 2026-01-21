@@ -1,5 +1,5 @@
 # Firewall Rules
-Last updated: 19th January 2026
+Last updated: 21th January 2026
 ## LAN
 ![LAN Rules](imgs/LAN-rules.png)
 ## Management
