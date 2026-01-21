@@ -1,5 +1,5 @@
 ---
-- name: Update and upgrade apt packages on Ubuntu hosts
+- name: Update and upgrade apt packages on Debian based hosts
   hosts: debian_based
   become: yes
   become_method: sudo
