@@ -67,7 +67,7 @@ Full Status page: https://status.dontddos.me
 | K3s-Worker-02 | HP EliteDesk G4 800<br>Intel i5 8600<br>16GB RAM                  | Kubernetes worker        |
 | K3s-Worker-03 | HP EliteDesk G4 800<br>Intel i5 8600<br>16GB RAM                  | Kubernetes worker        |
 | TrueNAS       | AMD FX-6100<br>24GB RAM<br>8TB Storage                            | Storage                  |
-| OpenStack-01  | HP EliteDesk G4 705<br>AMD Ryzen 5 PRO 2400GE<br>48GB RAM         | OpenStack                |
+
 
 ##  🚀 Services, Applications & Deployments
 
@@ -75,7 +75,6 @@ Full Status page: https://status.dontddos.me
 - [**Proxmox VE**](docs/infrastructure/proxmox-ve.md) - Type 1 hypervisor used to run and manage virtual machines and containers on the homelab server.
 - [**Portainer**](kubernetes/portainer/portainer) - Lightweight web UI for managing Docker and Kubernetes resources across hosts and clusters.
 - [**Kubernetes**](docs/infrastructure/kubernetes.md) - k3s-based container orchestration platform for running most services in the cluster.
-- [**OpenStack**](docs/infrastructure/openstack.md) - Private cloud platform for managing VMs, networks and block/object storage
 - **Docker** - Container runtime used for lightweight services and quick deployments outside Kubernetes.
 
 ### Networking
