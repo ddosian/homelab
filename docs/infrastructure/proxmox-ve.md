@@ -10,9 +10,6 @@
 | 104 | [mgmt-proxy](vms/mgmt-proxy.md) | 10.20.10.2   | 10   | 1     | 2        | 24           | pve-01 | Ubuntu Server 24.04.3 LTS |
 | 105 | wings-01                        | 10.20.30.105 | 30   | 6     | 16       | 128          | pve-01 | Ubuntu Server 24.04.3 LTS |
 | 106 | wazuh                           | 10.77.1.106  | 1    | 2     | 4        | 32           | pve-01 | Ubuntu Server 24.04.3 LTS |
-| 108 | microcloud-01                   | 10.77.1.108  | 1    | 4     | 16       | 192          | pve-01 | Ubuntu Server 24.04.3 LTS |
-| 109 | microcloud-02                   | 10.77.1.109  | 1    | 4     | 16       | 192          | pve-01 | Ubuntu Server 24.04.3 LTS |
-| 110 | microcloud-01                   | 10.77.1.110  | 1    | 4     | 16       | 192          | pve-01 | Ubuntu Server 24.04.3 LTS |
 ## LXCs
 
 | ID  | Name         | IP   | VLAN | Cores | RAM (GB) | Storage (GB) | Host   | OS                  |

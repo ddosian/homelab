@@ -75,7 +75,6 @@ Full Status page: https://status.dontddos.me
 - [**Proxmox VE**](docs/infrastructure/proxmox-ve.md) - Type 1 hypervisor used to run and manage virtual machines and containers on the homelab server.
 - [**Portainer**](kubernetes/portainer/portainer) - Lightweight web UI for managing Docker and Kubernetes resources across hosts and clusters.
 - [**Kubernetes**](docs/infrastructure/kubernetes.md) - k3s-based container orchestration platform for running most services in the cluster.
-- [**MicroCloud**](docs/infrastructure/microcloud.md)
 - **Docker** - Container runtime used for lightweight services and quick deployments outside Kubernetes.
 
 ### Networking
