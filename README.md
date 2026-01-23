@@ -89,14 +89,14 @@ Full Status page: https://status.dontddos.me
 - [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/) - Simple uptime and alerting dashboard for HTTP/ICMP checks.
 	- **Use-case:** Uptime & response monitoring
 	- **Deployment Method:** [Kubernetes Manifests](kubernetes/monitoring/uptime-kuma/)
-- [**Grafana**](kubernetes/monitoring/grafana/) - Dashboarding and visualization for metrics and logs.
+- [**Grafana**](kubernetes/monitoring/grafana/) - Dashboards and visualisation for metrics and logs.
 - [**Prometheus**](kubernetes/monitoring/prometheus/) - Metrics collection and alerting for cluster and service monitoring.
 - [**OpenSpeedTest**](docker/docker-01/openspeedtest/) - Browser-based network speed testing hosted on the lab.
 
 ### Security
 - [**Vaultwarden**](docker/docker-01/vaultwarden/) - Self-hosted password manager compatible with Bitwarden clients.
 - [**Authentik**](docker/docker-02/authentik/) - Identity provider offering SSO, LDAP/SSO integration and OIDC authentication.
-- **CrowdSec** - Collaborative IPS that analyzes logs and blocks abusive IPs across services.
+- **CrowdSec** - Collaborative IPS that analyses logs and blocks abusive IPs across services.
 - **Fail2Ban** - Simple intrusion prevention that bans IPs showing malicious behaviour on exposed services.
     - **Use-case:** Securing SSH on public facing machines
     - **Deployment Method:** APT, automated with an [Ansible playbook](ansible/playbooks/vps_fail2ban.yaml)
