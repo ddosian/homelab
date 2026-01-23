@@ -12,6 +12,15 @@ spec:
     - chart: netbox
       repoURL: https://charts.netbox.oss.netboxlabs.com/
       targetRevision: 7.3.5
+      helm:
+        values: |
+          externalDatabase:
+            host: netbox-dbc-wr
+            port: 5432
+            database: netbox
+            username: netbox
+            existingSecretName: "netbox-dbc-app"
+            existingSecretKey: password
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
