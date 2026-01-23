@@ -14,7 +14,7 @@
 
     - name: Deploy authorized_keys
       ansible.builtin.copy:
-        src: ansible/files/authorized_keys
+        src: ../files/authorized_keys
         dest: "{{ '/root' if ansible_user == 'root' else '/home/' + ansible_user }}/.ssh/authorized_keys"
         owner: "{{ ansible_user }}"
         group: "{{ ansible_user }}"
