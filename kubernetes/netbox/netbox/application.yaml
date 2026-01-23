@@ -14,6 +14,8 @@ spec:
       targetRevision: 7.3.5
       helm:
         values: |
+          postgresql:
+            enabled: false
           externalDatabase:
             host: netbox-dbc-wr
             port: 5432
