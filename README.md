@@ -76,6 +76,8 @@ Full Status page: https://status.dontddos.me
 - [**Portainer**](kubernetes/portainer/portainer) - Lightweight web UI for managing Docker and Kubernetes resources across hosts and clusters.
 - [**Kubernetes**](docs/infrastructure/kubernetes.md) - k3s-based container orchestration platform for running most services in the cluster.
 - **Docker** - Container runtime used for lightweight services and quick deployments outside Kubernetes.
+    - **Use-case:** Containerising applications
+    - **Deployment Method:** Automated with [Ansible Playbook](ansible/playbooks/ubuntu_docker_setup.yaml)
 
 ### Networking
 - **pfSense** - Edge firewall, VLAN routing and DHCP provider for the lab network.
