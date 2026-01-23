@@ -88,7 +88,7 @@ Full Status page: https://status.dontddos.me
 ### Monitoring
 - [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/) - Simple uptime and alerting dashboard for HTTP/ICMP checks.
 	- **Use-case:** Uptime & response monitoring
-	- **Deployment Method:** [Kubernetes Manifests](kubernetes/montiroing/uptime-kuma/)
+	- **Deployment Method:** [Kubernetes Manifests](kubernetes/monitoring/uptime-kuma/)
 - [**Grafana**](kubernetes/monitoring/grafana/) - Dashboarding and visualization for metrics and logs.
 - [**Prometheus**](kubernetes/monitoring/prometheus/) - Metrics collection and alerting for cluster and service monitoring.
 - [**OpenSpeedTest**](docker/docker-01/openspeedtest/) - Browser-based network speed testing hosted on the lab.
