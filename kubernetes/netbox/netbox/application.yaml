@@ -1,32 +1,32 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: netbox-helm
-#   namespace: argocd
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: netbox
-#   project: default
-#   sources:
-#     - chart: netbox
-#       repoURL: https://charts.netbox.oss.netboxlabs.com/
-#       targetRevision: 7.3.5
-#       helm:
-#         values: |
-#           postgresql:
-#             enabled: false
-#           externalDatabase:
-#             host: netbox-dbc-rw
-#             port: 5432
-#             database: netbox
-#             username: netbox
-#             existingSecretName: "netbox-dbc-app"
-#             existingSecretKey: password
-#   syncPolicy:
-#     syncOptions:
-#       - CreateNamespace=true
-#     automated:
-#       allowEmpty: true
-#       prune: true
-#       selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: netbox-helm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: netbox
+  project: default
+  sources:
+    - chart: netbox
+      repoURL: https://charts.netbox.oss.netboxlabs.com/
+      targetRevision: 7.3.5
+      helm:
+        values: |
+          postgresql:
+            enabled: false
+          externalDatabase:
+            host: netbox-dbc-rw
+            port: 5432
+            database: netbox
+            username: netbox
+            existingSecretName: "netbox-dbc-app"
+            existingSecretKey: password
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
