@@ -9,124 +9,28 @@
         gather_subset: hardware
       tags: [detect]
 
-    - name: Set architecture-specific variables
+    - name: Set architecture variables
       set_fact:
         wazuh_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
         wazuh_package_url: "{{ 'https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_arm64.deb' if ansible_architecture == 'aarch64' else 'https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_amd64.deb' }}"
         wazuh_package_file: "{{ 'wazuh-agent_4.14.1-1_arm64.deb' if ansible_architecture == 'aarch64' else 'wazuh-agent_4.14.1-1_amd64.deb' }}"
       tags: [detect]
 
-    - name: Display detected architecture
-      debug:
-        msg: |
-          Host: {{ inventory_hostname }}
-          Detected Architecture: {{ ansible_architecture }}
-          Using Package: {{ wazuh_arch }}
-          Download URL: {{ wazuh_package_url }}
-      tags: [detect]
-
-    - name: Check if Wazuh agent is already installed
-      command: dpkg -l wazuh-agent
-      register: wazuh_installed_check
-      failed_when: false
-      changed_when: false
-      tags: [check]
-
-    - name: Get installed Wazuh agent version (if installed)
-      shell: dpkg -l wazuh-agent | grep wazuh-agent | awk '{print $3}'
-      register: installed_version
-      when: wazuh_installed_check.rc == 0
-      changed_when: false
-      failed_when: false
-      tags: [check]
-
-    - name: Check current Wazuh configuration (if installed)
-      block:
-        - name: Get current agent name from config
-          shell: grep -oP '<agent_name>\K[^<]+' /var/ossec/etc/ossec.conf
-          register: current_agent_name
-          failed_when: false
-          changed_when: false
-
-        - name: Get current manager address from config
-          shell: grep -oP '<address>\K[^<]+' /var/ossec/etc/ossec.conf
-          register: current_manager_address
-          failed_when: false
-          changed_when: false
-
-        - name: Determine if configuration needs updating
-          set_fact:
-            agent_name_needs_update: "{{ current_agent_name.stdout != inventory_hostname }}"
-            manager_address_needs_update: "{{ current_manager_address.stdout != 'wazuh.local.dontddos.me' }}"
-      when: wazuh_installed_check.rc == 0
-      tags: [check]
-
-    - name: Display installation status
-      debug:
-        msg: |
-          Wazuh Agent Status on {{ inventory_hostname }}:
-          Currently Installed: {{ 'Yes' if wazuh_installed_check.rc == 0 else 'No' }}
-          {% if wazuh_installed_check.rc == 0 -%}
-          Installed Version: {{ installed_version.stdout | default('Unknown') }}
-          Target Version: 4.14.1-1
-          Current Agent Name: {{ current_agent_name.stdout | default('Not found') }}
-          Target Agent Name: {{ inventory_hostname }}
-          Agent Name Update Needed: {{ agent_name_needs_update | default(false) }}
-          Current Manager: {{ current_manager_address.stdout | default('Not found') }}
-          Target Manager: wazuh.local.dontddos.me
-          Manager Update Needed: {{ manager_address_needs_update | default(false) }}
-          {% endif -%}
-      tags: [check]
-
-    - name: Download Wazuh agent package (architecture-specific)
+    - name: Download Wazuh agent package
       get_url:
         url: "{{ wazuh_package_url }}"
         dest: "/tmp/{{ wazuh_package_file }}"
         mode: '0644'
-      when: wazuh_installed_check.rc != 0
       tags: [download]
 
-    - name: Install Wazuh agent with manager configuration (New Installation)
+    - name: Install Wazuh agent with manager configuration
       environment:
         WAZUH_MANAGER: 'wazuh.local.dontddos.me'
         WAZUH_AGENT_NAME: '{{ inventory_hostname }}'
       apt:
         deb: "/tmp/{{ wazuh_package_file }}"
         state: present
-      when: wazuh_installed_check.rc != 0
-      register: wazuh_install_result
       tags: [install]
-
-    - name: Update agent name in configuration (only if needed)
-      lineinfile:
-        path: /var/ossec/etc/ossec.conf
-        regexp: '<agent_name>.*</agent_name>'
-        line: "    <agent_name>{{ inventory_hostname }}</agent_name>"
-      register: agent_name_updated
-      when: 
-        - wazuh_installed_check.rc == 0
-        - agent_name_needs_update | default(false)
-      tags: [configure]
-
-    - name: Update manager address in configuration (only if needed)
-      lineinfile:
-        path: /var/ossec/etc/ossec.conf
-        regexp: '<address>.*</address>'
-        line: "    <address>wazuh.local.dontddos.me</address>"
-      register: manager_address_updated
-      when: 
-        - wazuh_installed_check.rc == 0
-        - manager_address_needs_update | default(false)
-      tags: [configure]
-
-    - name: Restart Wazuh agent if configuration changed
-      systemd:
-        name: wazuh-agent
-        state: restarted
-      when: 
-        - wazuh_installed_check.rc == 0
-        - (agent_name_updated.changed | default(false)) or (manager_address_updated.changed | default(false))
-      tags: [configure]
 
     - name: Start and enable Wazuh agent service
       systemd:
@@ -136,54 +40,14 @@
         daemon_reload: yes
       tags: [service]
 
-    - name: Wait for service to stabilize
-      wait_for:
-        timeout: 5
-      delegate_to: localhost
-      when: wazuh_install_result.changed | default(false) or agent_name_updated.changed | default(false) or manager_address_updated.changed | default(false)
-      tags: [service]
-
     - name: Check Wazuh agent status
       systemd:
         name: wazuh-agent
       register: wazuh_status
       tags: [status]
 
-    - name: Get Wazuh agent info
-      command: /var/ossec/bin/wazuh-control info
-      register: wazuh_info
-      changed_when: false
-      failed_when: false
-      tags: [status]
-
-    - name: Display comprehensive Wazuh agent status
-      debug:
-        msg: |
-          ===============================================
-          Wazuh Agent Status - {{ inventory_hostname }}
-          ===============================================
-          Architecture: {{ wazuh_arch }}
-          Installation Status: {{ 'New Installation' if wazuh_install_result.changed | default(false) else ('Configuration Updated' if (agent_name_updated.changed | default(false)) or (manager_address_updated.changed | default(false)) else 'Already Configured Correctly') }}
-          Service State: {{ wazuh_status.status.ActiveState }}
-          Service Enabled: {{ wazuh_status.status.UnitFileState }}
-          Manager: wazuh.local.dontddos.me
-          Agent Name: {{ inventory_hostname }}
-          Package: {{ wazuh_package_file }}
-          
-          Agent Info:
-          {{ wazuh_info.stdout | default('Unable to retrieve agent info') }}
-          ===============================================
-      tags: [status]
-
     - name: Clean up downloaded package
       file:
         path: "/tmp/{{ wazuh_package_file }}"
         state: absent
-      when: wazuh_installed_check.rc != 0
       tags: [cleanup]
-
-    - name: Final summary
-      debug:
-        msg: |
-          {{ inventory_hostname }}: {{ 'Wazuh agent installed successfully' if wazuh_install_result.changed | default(false) else ('Configuration updated' if (agent_name_updated.changed | default(false)) or (manager_address_updated.changed | default(false)) else 'Already properly configured - no changes needed') }}
-      tags: [summary]
