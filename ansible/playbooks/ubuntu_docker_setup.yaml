@@ -81,3 +81,4 @@
         -v /var/lib/docker/volumes:/var/lib/docker/volumes
         -v /:/host
         portainer/agent:2.33.6
+      when: docker_check.rc != 0
