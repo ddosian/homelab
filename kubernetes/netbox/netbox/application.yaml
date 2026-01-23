@@ -17,7 +17,7 @@ spec:
           postgresql:
             enabled: false
           externalDatabase:
-            host: netbox-dbc-wr
+            host: netbox-dbc-rw
             port: 5432
             database: netbox
             username: netbox
