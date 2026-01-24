@@ -6,3 +6,10 @@ website/resources/_gen/
 website/.hugo_build.lock
 
 .env
+
+*.lock*
+
+# Terraform
+*.tfvars
+.terraform/
+*.tfstate*
