@@ -20,6 +20,7 @@ disk_storage = prompt("Disk Storage", "disk-02")
 disk_size = prompt("Disk Storage in GB", "32")
 cloudinit_storage = prompt("Cloud Init Storage", "local-lvm")
 network_bridge = prompt("Network Bridge", "vmbr1")
+vlan_tag = prompt("VLAN Tag", "1")
 path = prompt("Path to File", f"/Users/ddos/homelab/terraform/vm-{name}.tf")
 
 file = f'''
@@ -66,6 +67,7 @@ resource "proxmox_vm_qemu" "{name}" {{
     id     = 0
     model  = "virtio"
     bridge = "{network_bridge}"
+    tag    = {vlan_tag}
   }}
   ipconfig0 = "ip=dhcp"
 }}
