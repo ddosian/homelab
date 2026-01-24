@@ -78,6 +78,7 @@ Full Status page: https://status.dontddos.me
 - **Docker** - Container runtime used for lightweight services and quick deployments outside Kubernetes.
     - **Use-case:** Containerising applications
     - **Deployment Method:** Automated with [Ansible Playbook](ansible/playbooks/ubuntu_docker_setup.yaml)
+- [**Terraform**](terraform/) -  Infrastructure as code
 
 ### Networking
 - **pfSense** - Edge firewall, VLAN routing and DHCP provider for the lab network.
