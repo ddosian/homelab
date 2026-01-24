@@ -1,20 +1,20 @@
-# apiVersion: postgresql.cnpg.io/v1
-# kind: Cluster
-# metadata:
-#   name: netbox-dbc
-#   namespace: netbox
-# spec:
-#   instances: 3
-#   monitoring:
-#     enablePodMonitor: true
-#   storage:
-#     size: 5Gi
-#     storageClass: longhorn-single
-#   affinity:
-#     enablePodAntiAffinity: true
-#     topologyKey: kubernetes.io/hostname
-#     podAntiAffinityType: required
-#   bootstrap:
-#     initdb:
-#       database: netbox
-#       owner: netbox
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: netbox-dbc
+  namespace: netbox
+spec:
+  instances: 3
+  monitoring:
+    enablePodMonitor: true
+  storage:
+    size: 5Gi
+    storageClass: longhorn-single
+  affinity:
+    enablePodAntiAffinity: true
+    topologyKey: kubernetes.io/hostname
+    podAntiAffinityType: required
+  bootstrap:
+    initdb:
+      database: netbox
+      owner: netbox
