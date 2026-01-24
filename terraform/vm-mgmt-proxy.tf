@@ -25,7 +25,7 @@ resource "proxmox_vm_qemu" "mgmt-proxy" {
       scsi0 {
         disk {
           storage  = "disk-02"
-          size     = "24G"
+          size     = "32G"
           iothread = true
         }
       }
