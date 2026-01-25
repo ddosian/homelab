@@ -1,7 +1,6 @@
 
 resource "proxmox_vm_qemu" "docker-private" {
   name        = "docker-private"
-  vmid        = 107
   target_node = "pve-01"
   clone       = "ubuntu-24.04-template"
   agent = 1
