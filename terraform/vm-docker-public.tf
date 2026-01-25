@@ -58,7 +58,7 @@ resource "proxmox_vm_qemu" "docker-public" {
     tag    = 20
   }
 
-  ipconfig0 = "ip=10.20.20.109/16,gw=10.20.20.1"
+  ipconfig0 = "ip=10.20.20.105/16,gw=10.20.20.1"
 }
 
 # NetBox
@@ -78,7 +78,7 @@ resource "netbox_interface" "docker-public-eth0" {
 }
 
 resource "netbox_ip_address" "docker-public-ip" {
-  ip_address            = "10.20.20.109/16"
+  ip_address            = "10.20.20.105/16"
   status                = "active"
   virtual_machine_interface_id = netbox_interface.docker-public-eth0.id
 }

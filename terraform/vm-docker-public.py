@@ -21,7 +21,7 @@ cloudinit_storage = "local-lvm"
 # Network Settings
 network_bridge = "vmbr1"
 vlan_tag = 20
-ip_address = "10.20.20.109"
+ip_address = "10.20.20.105"
 cidr = "16"
 gateway = "10.20.20.1"
 
