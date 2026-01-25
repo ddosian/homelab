@@ -133,6 +133,7 @@ Full Status page: https://status.dontddos.me
 - **Mailcow** - Full mail server suite providing mailboxes, webmail and spam/virus filtering for personal domains.
 
 ### Automation
+- [**Terraform**](terraform/) - Infrastructure as code
 - [**Ansible**](ansible/) - Configuration management and orchestration used for provisioning hosts and services.
 - [**n8n**](kubernetes/n8n/n8n/) - Workflow automation/orchestration for integrating APIs and automating repetitive tasks.
 
