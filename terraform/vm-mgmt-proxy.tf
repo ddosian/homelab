@@ -1,6 +1,7 @@
 
 resource "proxmox_vm_qemu" "mgmt-proxy" {
   name        = "mgmt-proxy"
+  vmid        = 104
   target_node = "pve-01"
   clone       = "ubuntu-24.04-template"
   agent = 1
