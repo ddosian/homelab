@@ -52,7 +52,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /opt/containers/media/radarr/data:/data
+      - /opt/containers/media/radarr/data:/config
       - /mnt/media/movies:/movies
       - /mnt/media/downloads:/downloads
     restart: unless-stopped
