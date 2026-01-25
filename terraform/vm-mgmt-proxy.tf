@@ -1,4 +1,3 @@
-
 resource "proxmox_vm_qemu" "mgmt-proxy" {
   name        = "mgmt-proxy"
   target_node = "pve-01"

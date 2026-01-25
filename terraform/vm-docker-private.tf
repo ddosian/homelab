@@ -1,4 +1,3 @@
-
 resource "proxmox_vm_qemu" "docker-private" {
   name        = "docker-private"
   target_node = "pve-01"

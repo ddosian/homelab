@@ -1,4 +1,3 @@
-
 resource "proxmox_vm_qemu" "wings-01" {
   name        = "wings-01"
   target_node = "pve-01"

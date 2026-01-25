@@ -1,37 +1,12 @@
 import random
 import os
 import sys
-
-def prompt(message, default):
-    users_input = input(f"{message} [{default}]: ")
-    if users_input == "":
-        return default
-    else:
-        return users_input
-
-name = prompt("VM Name", str(random.randint(800, 899)))
-target_node = prompt("Target Node", "pve-01")
-template = prompt("Template", "ubuntu-24.04-template")
-cpu_cores = prompt("CPU Cores", "4")
-cpu_sockets = prompt("CPU Sockets", "1")
-cpu_type = prompt("CPU Type", "host")
-ram_size = int(prompt("RAM Size in GB", "4"))
-disk_storage = prompt("Disk Storage", "disk-02")
-disk_size = int(prompt("Disk Storage in GB", "32"))
-if disk_size < 32:
+    
+def generate_file(name, target_node, template, cpu_cores, cpu_sockets, cpu_type, ram_size, disk_storage, disk_size, cloudinit_storage, network_bridge, vlan_tag, ip_address, cidr, gateway):
+  if disk_size < 32:
     print("WARNING: Disk size cannot be smaller than 32, setting to 32.")
     disk_size = 32
-cloudinit_storage = prompt("Cloud Init Storage", "local-lvm")
-network_bridge = prompt("Network Bridge", "vmbr1")
-vlan_tag = prompt("VLAN Tag", "1")
-ip_address = prompt("IP Address", "10.77.x.x")
-cidr = prompt("CIDR Prefix", "16")
-gateway = prompt("Gateway", "10.77.0.1")
-
-path = prompt("Path to File", f"/Users/ddos/homelab/terraform/vm-{name}.tf")
-
-file = f'''
-resource "proxmox_vm_qemu" "{name}" {{
+  file = f'''resource "proxmox_vm_qemu" "{name}" {{
   name        = "{name}"
   target_node = "{target_node}"
   clone       = "{template}"
@@ -125,22 +100,6 @@ resource "netbox_virtual_disk" "{name}-scsi0" {{
   name               = "scsi0"
   size_mb            = {disk_size * 1000}
   virtual_machine_id = netbox_virtual_machine.{name}.id
-}}
-'''
+}}'''
 
-path = os.path.expanduser(path)
-parent_dir = os.path.dirname(path)
-if parent_dir:
-    os.makedirs(parent_dir, exist_ok=True)
-
-if os.path.exists(path):
-    overwrite = prompt(f"File {path} exists. Overwrite?", "no")
-    if overwrite.lower() not in ("y", "yes"):
-        print("Aborted: file not overwritten.")
-        sys.exit(0)
-
-with open(path, "w", encoding="utf-8") as f:
-    f.write(file)
-
-print(f"Saved file to {path}")
-print("FINISHED")
+  return file

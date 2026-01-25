@@ -13,3 +13,6 @@ website/.hugo_build.lock
 *.tfvars
 .terraform/
 *.tfstate*
+
+# Python
+__pycache__/
