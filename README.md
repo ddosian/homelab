@@ -105,7 +105,6 @@ Full Status page: https://status.dontddos.me
 - **Fail2Ban** - Simple intrusion prevention that bans IPs showing malicious behaviour on exposed services.
     - **Use-case:** Securing SSH on public facing machines
     - **Deployment Method:** APT, automated with an [Ansible playbook](ansible/playbooks/vps_fail2ban.yaml)
-- [**Wazuh**](docker/wazuh/wazuh/) - Host and security monitoring, SIEM-style alerting and log analysis.
 - [**Cert Manager**](kubernetes/cert-manager/cert-manager/) - Automates issuance and renewal of TLS certificates inside Kubernetes.
 
 ### Git & CI/CD
