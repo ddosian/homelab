@@ -15,9 +15,11 @@ template = prompt("Template", "ubuntu-24.04-template")
 cpu_cores = prompt("CPU Cores", "4")
 cpu_sockets = prompt("CPU Sockets", "1")
 cpu_type = prompt("CPU Type", "host")
-ram_size = prompt("RAM Size", "4096")
+ram_size = prompt("RAM Size in MB", "4096")
 disk_storage = prompt("Disk Storage", "disk-02")
-disk_size = prompt("Disk Storage in GB", "32")
+disk_size = int(prompt("Disk Storage in GB", "32"))
+if disk_size < 32:
+  disk_size = 32
 cloudinit_storage = prompt("Cloud Init Storage", "local-lvm")
 network_bridge = prompt("Network Bridge", "vmbr1")
 vlan_tag = prompt("VLAN Tag", "1")
