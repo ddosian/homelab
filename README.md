@@ -142,7 +142,6 @@ Full Status page: https://status.dontddos.me
 
 ### Remote management
 - [**Rustdesk**](docker/docker-01/rustdesk/) - Remote desktop solution for ad-hoc support and remote access.
-- [**Guacamole**](docker/docker-01/guacamole/) - Browser-based remote desktop gateway (RDP/VNC/SSH) for managing systems.
 
 ## 🔗 Links 
 - **Status Page:** https://status.dontddos.me
