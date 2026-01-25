@@ -82,3 +82,9 @@
         -v /:/host
         portainer/agent:2.33.6
       when: docker_check.rc != 0
+
+    - name: Add user to docker group
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
