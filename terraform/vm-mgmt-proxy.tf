@@ -4,7 +4,7 @@ resource "proxmox_vm_qemu" "mgmt-proxy" {
   target_node = "pve-01"
   clone       = "ubuntu-24.04-template"
   agent = 1
-  onboot = true
+  start_at_node_boot = true
   cpu {
     cores   = 1
     sockets = 1

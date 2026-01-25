@@ -31,7 +31,7 @@ resource "proxmox_vm_qemu" "{name}" {{
   target_node = "{target_node}"
   clone       = "{template}"
   agent = 1
-  onboot = true
+  start_at_node_boot = true
   cpu {{
     cores   = {cpu_cores}
     sockets = {cpu_sockets}
