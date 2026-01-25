@@ -26,7 +26,7 @@ resource "proxmox_vm_qemu" "docker-private" {
       scsi0 {
         disk {
           storage  = "disk-02"
-          size     = "64G"
+          size     = "32G"
           iothread = true
         }
       }
