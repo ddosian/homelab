@@ -2,6 +2,7 @@
 services:
   wings:
     image: ghcr.io/pelican-dev/wings:latest
+    container_name: wings
     tty: true
     environment:
       TZ: "UTC"
@@ -17,15 +18,9 @@ services:
       - "/tmp/pelican/:/tmp/pelican/"
       - "/etc/ssl/certs:/etc/ssl/certs:ro"
     networks:
-      - wings0
+      - newt
     restart: unless-stopped
 
 networks:
-  wings0:
-    name: wings0
-    driver: bridge
-    ipam:
-      config:
-        - subnet: "172.21.0.0/16"
-    driver_opts:
-      com.docker.network.bridge.name: wings0
+  newt:
+    external: true
