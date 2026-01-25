@@ -9,13 +9,6 @@ services:
     volumes:
       - /opt/containers/adguard-home/workdir:/opt/adguardhome/work
       - /opt/containers/adguard-home/confdir:/opt/adguardhome/conf
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=proxy
-      - traefik.http.routers.adguard-home-https.rule=Host(`adguard-home.local.dontddos.me`)
-      - traefik.http.routers.adguard-home-https.entrypoints=websecure
-      - traefik.http.routers.adguard-home-https.tls=true
-      - traefik.http.routers.adguard-home-https.tls.certresolver=cloudflare
     networks:
       - proxy
     restart: unless-stopped
