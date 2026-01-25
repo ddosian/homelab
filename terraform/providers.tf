@@ -41,7 +41,3 @@ provider "netbox" {
   server_url = "https://netbox.local.dontddos.me"
   api_token  = var.netbox_api_token
 }
-
-data "netbox_cluster" "pve-01" {
-  name = "PVE-01"
-}

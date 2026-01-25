@@ -7,6 +7,12 @@ resource "proxmox_vm_qemu" "docker-private" {
   agent = 1
   start_at_node_boot = true
 
+  startup_shutdown {
+    order            = -1
+    startup_delay    = -1
+    shutdown_timeout = -1
+  }
+
   cpu {
     cores   = 4
     sockets = 1
@@ -59,7 +65,8 @@ resource "proxmox_vm_qemu" "docker-private" {
 # NetBox
 resource "netbox_virtual_machine" "docker-private" {
   name         = proxmox_vm_qemu.docker-private.name
-  cluster_id   = data.netbox_cluster.pve-01.id
+  cluster_id   = 1
+  device_id    = 1
   vcpus        = 4
   memory_mb    = 24000
   disk_size_mb = 32000

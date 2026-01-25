@@ -39,6 +39,12 @@ resource "proxmox_vm_qemu" "{name}" {{
   agent = 1
   start_at_node_boot = true
 
+  startup_shutdown {{
+    order            = -1
+    startup_delay    = -1
+    shutdown_timeout = -1
+  }}
+
   cpu {{
     cores   = {cpu_cores}
     sockets = {cpu_sockets}
@@ -91,7 +97,8 @@ resource "proxmox_vm_qemu" "{name}" {{
 # NetBox
 resource "netbox_virtual_machine" "{name}" {{
   name         = proxmox_vm_qemu.{name}.name
-  cluster_id   = data.netbox_cluster.pve-01.id
+  cluster_id   = 1
+  device_id    = 1
   vcpus        = {cpu_cores}
   memory_mb    = {ram_size * 1000}
   disk_size_mb = {disk_size * 1000}

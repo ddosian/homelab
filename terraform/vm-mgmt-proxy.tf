@@ -7,6 +7,12 @@ resource "proxmox_vm_qemu" "mgmt-proxy" {
   agent = 1
   start_at_node_boot = true
 
+  startup_shutdown {
+    order            = -1
+    startup_delay    = -1
+    shutdown_timeout = -1
+  }
+
   cpu {
     cores   = 1
     sockets = 1
@@ -59,7 +65,8 @@ resource "proxmox_vm_qemu" "mgmt-proxy" {
 # NetBox
 resource "netbox_virtual_machine" "mgmt-proxy" {
   name         = proxmox_vm_qemu.mgmt-proxy.name
-  cluster_id   = data.netbox_cluster.pve-01.id
+  cluster_id   = 1
+  device_id    = 1
   vcpus        = 1
   memory_mb    = 2000
   disk_size_mb = 32000
