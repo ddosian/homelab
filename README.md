@@ -134,7 +134,6 @@ Full Status page: https://status.dontddos.me
 
 ### Automation
 - [**Ansible**](ansible/) - Configuration management and orchestration used for provisioning hosts and services.
-- [**Semaphore**](kubernetes/semaphore/semaphore/) - Self-hosted job runner for automation tasks and playbook execution.
 - [**n8n**](kubernetes/n8n/n8n/) - Workflow automation/orchestration for integrating APIs and automating repetitive tasks.
 
 ### Games
