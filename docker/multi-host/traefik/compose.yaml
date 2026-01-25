@@ -15,6 +15,7 @@ services:
       - "--certificatesresolvers.cloudflare.acme.caServer=https://acme-v02.api.letsencrypt.org/directory"
       - "--certificatesresolvers.cloudflare.acme.dnsChallenge.provider=cloudflare"
       - "--certificatesresolvers.cloudflare.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53"
+      - "--certificatesresolvers.cloudflare.acme.storage=/var/traefik/certs/acme.json"
       - "--serversTransport.insecureSkipVerify=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedByDefault=false"
