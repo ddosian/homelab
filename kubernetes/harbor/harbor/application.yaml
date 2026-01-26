@@ -10,7 +10,7 @@ spec:
   project: default
   sources:
     - chart: harbor
-      repoURL: https://cloudnative-pg.github.io/charts
+      repoURL: https://helm.goharbor.io
       targetRevision: 1.18.2
   syncPolicy:
     syncOptions:
