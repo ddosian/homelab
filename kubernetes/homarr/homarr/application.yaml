@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: homarr
       repoURL: https://homarr-labs.github.io/charts
-      targetRevision: 8.9.1
+      targetRevision: 8.10.0
       helm: 
         values: |
           database:
