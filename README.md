@@ -86,7 +86,7 @@ Full Status page: https://status.dontddos.me
 - [**Traefik**](kubernetes/traefik/traefik) - In-cluster ingress controller routing HTTP/S traffic to Kubernetes services.
 - [**Nginx**](docker/multi-host/proxy/) - Reverse proxy and TLS termination for Docker-based services not in Kubernetes.
 - **Tailscale** - WireGuard-based mesh VPN for secure remote access to the lab.
-- [**Netbox**](kubernetes/netbox/netbox/) - 
+- [**Netbox**](kubernetes/netbox/netbox/) - Network documentation
     - **Deployment Method:** [Kubernetes Manifests](kubernetes/netbox/netbox/)
 - [**LibreNMS**](kubernetes/librenms/librenms/) - Network monitoring via SNMP
 
