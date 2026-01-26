@@ -133,9 +133,11 @@ Full Status page: https://status.dontddos.me
 - [**Ansible**](ansible/) - Configuration management and orchestration used for provisioning hosts and services.
 - [**n8n**](kubernetes/n8n/n8n/) - Workflow automation/orchestration for integrating APIs and automating repetitive tasks.
 
-
 ### Remote management
 - [**Rustdesk**](docker/docker-01/rustdesk/) - Remote desktop solution for ad-hoc support and remote access.
+
+### Development
+- [**Coder**](kubernetes/coder/coder/) - VS Code sessions in the browser
 
 ## 🔗 Links 
 - **Status Page:** https://status.dontddos.me
