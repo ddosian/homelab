@@ -140,6 +140,5 @@ Full Status page: https://status.dontddos.me
 
 ## 🔗 Links 
 - **Status Page:** https://status.dontddos.me
-- **Personal Website:** https://dontddos.me 
 - **GitHub:** https://github.com/ddosian 
 - **Self-hosted Gitea:** https://gitea.dontddos.me
