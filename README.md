@@ -135,9 +135,6 @@ Full Status page: https://status.dontddos.me
 - [**Ansible**](ansible/) - Configuration management and orchestration used for provisioning hosts and services.
 - [**n8n**](kubernetes/n8n/n8n/) - Workflow automation/orchestration for integrating APIs and automating repetitive tasks.
 
-### Games
-- [**Pelican**](docker/docker-02/pelican/) - Game panel for hosting and managing game servers.
-- **Wings** - Game server management stack (backend for some game servers).
 
 ### Remote management
 - [**Rustdesk**](docker/docker-01/rustdesk/) - Remote desktop solution for ad-hoc support and remote access.
