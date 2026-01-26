@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: coder-helm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: coder
+  project: default
+  sources:
+    - chart: coder
+      repoURL: https://helm.coder.com/v2
+      targetRevision: 2.28.6
+      helm:
+        values: |
+          coder:
+            env:
+              - name: CODER_PG_CONNECTION_URL
+                valueFrom:
+                  secretKeyRef:
+                    name: coder-dbc-app
+                    key: url
+              - name: CODER_OAUTH2_GITHUB_DEFAULT_PROVIDER_ENABLE
+                value: "false"
+              - name: CODER_ACCESS_URL
+                value: "https://coder.local.dontddos.me"
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
