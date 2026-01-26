@@ -22,7 +22,7 @@ cloudinit_storage = "local-lvm"
 network_bridge = "vmbr1"
 vlan_tag = 20
 ip_address = "10.20.20.105"
-cidr = "16"
+cidr = "24"
 gateway = "10.20.20.1"
 
 with open("vm-docker-public.tf", "w") as f:
