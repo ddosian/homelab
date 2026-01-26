@@ -1,8 +1,8 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: netbox-dbc
-  namespace: netbox
+  name: coder-dbc
+  namespace: coder
 spec:
   instances: 3
   monitoring:
@@ -16,5 +16,5 @@ spec:
     podAntiAffinityType: required
   bootstrap:
     initdb:
-      database: netbox
-      owner: netbox
+      database: coder
+      owner: coder
