@@ -1,7 +1,3 @@
-import random
-import os
-import sys
-    
 def generate_file(name, target_node, template, cpu_cores, cpu_sockets, cpu_type, ram_size, disk_storage, disk_size, cloudinit_storage, network_bridge, vlan_tag, ip_address, cidr, gateway):
   if disk_size < 32:
     print("WARNING: Disk size cannot be smaller than 32, setting to 32.")
