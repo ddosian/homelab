@@ -88,6 +88,7 @@ Full Status page: https://status.dontddos.me
 - **Tailscale** - WireGuard-based mesh VPN for secure remote access to the lab.
 - [**Netbox**](kubernetes/netbox/netbox/) - 
     - **Deployment Method:** [Kubernetes Manifests](kubernetes/netbox/netbox/)
+- [**LibreNMS**](kubernetes/librenms/librenms/) - Network monitoring via SNMP
 
 ### Monitoring
 - [**Uptime Kuma**](kubernetes/monitoring/uptime-kuma/) - Simple uptime and alerting dashboard for HTTP/ICMP checks.
