@@ -16,8 +16,8 @@ spec:
         values: |
           expose:
             type: clusterIP
-          tls:
-            enabled: false
+            tls:
+              enabled: false
   syncPolicy:
     syncOptions:
       - ServerSideApply=true
