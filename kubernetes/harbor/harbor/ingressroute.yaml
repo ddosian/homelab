@@ -11,5 +11,5 @@ spec:
     - match: Host(`harbor.local.dontddos.me`)
       kind: Rule
       services:
-        - name: harbor-helm-portal
+        - name: harbor
           port: 80
