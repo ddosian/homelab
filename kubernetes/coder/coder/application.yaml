@@ -20,7 +20,7 @@ spec:
                 valueFrom:
                   secretKeyRef:
                     name: coder-dbc-app
-                    key: url
+                    key: uri
               - name: CODER_OAUTH2_GITHUB_DEFAULT_PROVIDER_ENABLE
                 value: "false"
               - name: CODER_ACCESS_URL
