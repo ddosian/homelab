@@ -4,6 +4,7 @@ metadata:
   name: privatebin
   namespace: privatebin
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: privatebin
