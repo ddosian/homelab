@@ -21,7 +21,7 @@ spec:
         - containerPort: 8080
         env:
           - name: PORT
-            volume: "8080"
+            value: "8080"
         volumeMounts:
         - name: termix-data
           mountPath: /app/data
