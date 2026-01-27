@@ -15,9 +15,9 @@ spec:
       helm:
         values: |
           server: 
-            replicas: 500
+            replicas: 2
           worker:
-            replicas: 500
+            replicas: 3
           global:
             envFrom:
               - secretRef:
