@@ -12,6 +12,8 @@ spec:
       labels:
         app: termix
     spec:
+      securityContext:
+        fsGroup: 1000
       containers:
       - name: termix
         image: ghcr.io/lukegus/termix:latest
