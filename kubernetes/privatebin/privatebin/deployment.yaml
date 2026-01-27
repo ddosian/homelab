@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: privatebin
+  namespace: privatebin
+spec:
+  selector:
+    matchLabels:
+      app: privatebin
+  template:
+    metadata:
+      labels:
+        app: privatebin
+    spec:
+      containers:
+      - name: privatebin
+        image: privatebin/nginx-fpm-alpines
+        ports:
+        - containerPort: 8080
