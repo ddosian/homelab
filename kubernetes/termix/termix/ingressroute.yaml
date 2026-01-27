@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: termix
+  namespace: termix
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`termix.local.dontddos.me`)
+      kind: Rule
+      services:
+        - name: termix
+          port: 8080
