@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: privatebin
-        image: privatebin/nginx-fpm-alpines
+        image: privatebin/nginx-fpm-alpines:latest
         ports:
         - containerPort: 8080
