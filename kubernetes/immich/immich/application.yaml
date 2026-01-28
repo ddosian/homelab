@@ -12,6 +12,12 @@ spec:
     - chart: .
       repoURL: oci://ghcr.io/immich-app/immich-charts/immich
       targetRevision: 0.10.3
+      helm:
+        values: |
+          immich:
+            persistence:
+              library:
+                existingClaim: immich-libary
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
