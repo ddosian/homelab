@@ -18,9 +18,6 @@ spec:
             ingress:
               main:
                 enabled: false
-            configMaps:
-              config:
-                enabled: false
             env:
               VIKUNJA_DATABASE_TYPE: "postgres"
               VIKUNJA_DATABASE_USER: "vikunja"
