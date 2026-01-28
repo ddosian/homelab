@@ -32,6 +32,8 @@ spec:
             persistence:
               library:
                 existingClaim: immich-libary
+          valkey:
+            enabled: true
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
