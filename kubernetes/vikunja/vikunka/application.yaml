@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vikunja-helm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: vikunja
+  project: default
+  sources:
+    - chart: .
+      repoURL: oci://ghcr.io/go-vikunja/helm-chart/vikunja
+      targetRevision: 2.0.0
+      helm:
+        values: |
+          vikunja:
+            ingress:
+              main:
+                enabled: false
+            env:
+              VIKUNJA_DATABASE_TYPE: "postgres"
+              VIKUNJA_DATABASE_USER: "vikunja"
+              VIKUNJA_DATABASE_HOST: "vikunja-dbc-rw"
+              VIKUNJA_DATABASE_DATABASE: "vikunja"
+              VIKUNJA_DATABASE_PASSWORD:
+                valueFrom:
+                  secretKeyRef:
+                    name: vikunja-dbc-app
+                    key: password
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
