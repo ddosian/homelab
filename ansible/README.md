@@ -1,2 +1,4 @@
 # Ansible
-- Playbooks are executed by [Semaphore](../kubernetes/semaphore/semaphore/)
+- Config file: [ansible.cfg](ansible.cfg)
+- Inventories: [inventory/](inventory/)
+- Playbooks: [playbooks/](playbooks/)
