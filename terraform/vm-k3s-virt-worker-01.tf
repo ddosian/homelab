@@ -58,7 +58,7 @@ resource "proxmox_vm_qemu" "k3s-virt-worker-01" {
     tag    = 40
   }
 
-  ipconfig0 = "ip=10.20.40.31/24,gw=10.20.40.31"
+  ipconfig0 = "ip=10.20.40.31/24,gw=10.20.40.1"
 }
 
 # NetBox
