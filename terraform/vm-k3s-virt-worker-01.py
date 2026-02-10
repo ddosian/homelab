@@ -15,7 +15,7 @@ ram_size = 16
 
 # Storage Settings
 disk_storage = "disk-02"
-disk_size = 128
+disk_size = 256
 cloudinit_storage = "local-lvm"
 
 # Network Settings

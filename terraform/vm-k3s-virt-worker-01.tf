@@ -37,7 +37,7 @@ resource "proxmox_vm_qemu" "k3s-virt-worker-01" {
       scsi0 {
         disk {
           storage  = "disk-02"
-          size     = "128G"
+          size     = "256G"
           iothread = true
         }
       }
@@ -68,7 +68,7 @@ resource "netbox_virtual_machine" "k3s-virt-worker-01" {
   device_id    = 1
   vcpus        = 6
   memory_mb    = 16000
-  disk_size_mb = 128000
+  disk_size_mb = 256000
   status       = "active"
 }
 
@@ -90,6 +90,6 @@ resource "netbox_primary_ip" "k3s-virt-worker-01-primary-ip" {
 
 resource "netbox_virtual_disk" "k3s-virt-worker-01-scsi0" {
   name               = "scsi0"
-  size_mb            = 128000
+  size_mb            = 256000
   virtual_machine_id = netbox_virtual_machine.k3s-virt-worker-01.id
 }
