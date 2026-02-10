@@ -23,7 +23,7 @@ network_bridge = "vmbr1"
 vlan_tag = 40
 ip_address = "10.20.40.31"
 cidr = "24"
-gateway = "10.77.0.1"
+gateway = "10.20.40.31"
 
 with open("vm-k3s-virt-worker-01.tf", "w") as f:
     f.write(utils.generate_file(name, target_node, template, cpu_cores, cpu_sockets, cpu_type, ram_size, disk_storage, disk_size, cloudinit_storage, network_bridge, vlan_tag, ip_address, cidr, gateway))
