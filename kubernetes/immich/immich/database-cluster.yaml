@@ -23,5 +23,33 @@ spec:
       database: immich
       owner: immich
       postInitApplicationSQL:
-      - CREATE EXTENSION vchord CASCADE;
-      - CREATE EXTENSION earthdistance CASCADE;
+        - CREATE EXTENSION vchord CASCADE;
+        - CREATE EXTENSION earthdistance CASCADE;
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: immich-dbc-1
+  namespace: immich
+spec:
+  instances: 3
+  monitoring:
+    enablePodMonitor: true
+  storage:
+    size: 8Gi
+    storageClass: longhorn-single
+  imageName: ghcr.io/tensorchord/cloudnative-vectorchord:16.9-0.4.3
+  postgresql:
+    shared_preload_libraries:
+      - "vchord.so"
+  affinity:
+    enablePodAntiAffinity: true
+    topologyKey: kubernetes.io/hostname
+    podAntiAffinityType: required
+  bootstrap:
+    initdb:
+      database: immich
+      owner: immich
+      postInitApplicationSQL:
+        - CREATE EXTENSION vchord CASCADE;
+        - CREATE EXTENSION earthdistance CASCADE;
