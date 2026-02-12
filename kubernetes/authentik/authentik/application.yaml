@@ -1,38 +1,38 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: authentik-helm
-#   namespace: argocd
-# spec:
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: authentik
-#   project: default
-#   sources:
-#     - chart: authentik
-#       repoURL: https://charts.goauthentik.io/
-#       targetRevision: 2025.12.3
-#       helm:
-#         values: |
-#           server:
-#             replicas: 2
-#           worker:
-#             replicas: 3
-#           global:
-#             envFrom:
-#               - secretRef:
-#                   name: authentik-env
-#           authentik:
-#             enabled: true
-#             postgresql:
-#               host: "authentik-dbc-rw"
-#               name: "authentik"
-#               user: "authentik"
-#               port: 5432
-#   syncPolicy:
-#     syncOptions:
-#       - CreateNamespace=true
-#     automated:
-#       allowEmpty: true
-#       prune: true
-#       selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: authentik-helm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: authentik
+  project: default
+  sources:
+    - chart: authentik
+      repoURL: https://charts.goauthentik.io/
+      targetRevision: 2025.12.3
+      helm:
+        values: |
+          server:
+            replicas: 2
+          worker:
+            replicas: 3
+          global:
+            envFrom:
+              - secretRef:
+                  name: authentik-env
+          authentik:
+            enabled: true
+            postgresql:
+              host: "authentik-dbc-2-rw"
+              name: "authentik"
+              user: "authentik"
+              port: 5432
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
