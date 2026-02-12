@@ -18,3 +18,24 @@ spec:
     initdb:
       database: authentik
       owner: authentik
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: authentik-dbc-2
+  namespace: authentik
+spec:
+  instances: 3
+  monitoring:
+    enablePodMonitor: true
+  storage:
+    size: 8Gi
+    storageClass: longhorn-single
+  affinity:
+    enablePodAntiAffinity: true
+    topologyKey: kubernetes.io/hostname
+    podAntiAffinityType: required
+  bootstrap:
+    initdb:
+      database: authentik
+      owner: authentik
