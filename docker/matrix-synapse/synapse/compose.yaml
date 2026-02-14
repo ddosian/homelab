@@ -5,6 +5,8 @@ services:
     image: docker.io/matrixdotorg/synapse:latest
     environment:
       - SYNAPSE_CONFIG_PATH=/data/homeserver.yaml
+      - UID=991
+      - GID=991
     volumes:
       - /opt/containers/synapse/data:/data
     depends_on:
