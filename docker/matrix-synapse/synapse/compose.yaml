@@ -13,7 +13,7 @@ services:
       - db
     networks:
       - synapse
-      - proxy
+      - newt
     restart: unless-stopped
 
   db:
