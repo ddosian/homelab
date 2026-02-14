@@ -2,9 +2,9 @@
 services:
   nginx:
     image: nginx:latest
-    container_name: website
+    container_name: dontddosme
     volumes:
-      - /opt/containers/website/content:/usr/share/nginx/html:ro
+      - /opt/containers/dontddos.me/content:/usr/share/nginx/html:ro
     networks:
       - newt
     restart: unless-stopped
