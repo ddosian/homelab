@@ -14,7 +14,7 @@ spec:
       targetRevision: 7.3.5
       helm:
         values: |
-          replicaCount: 2
+          replicaCount: 1
           persistence:
             accessMode: ReadWriteMany
           postgresql:
