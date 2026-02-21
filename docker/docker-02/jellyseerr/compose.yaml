@@ -5,8 +5,6 @@ services:
     container_name: jellyseerr
     environment:
       - TZ=Etc/UTC
-    ports:
-      - 5055:5055
     volumes:
       - /opt/containers/jellyseerr/config:/app/config
     networks:
