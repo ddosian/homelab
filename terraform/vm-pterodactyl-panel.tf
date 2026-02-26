@@ -1,5 +1,5 @@
-resource "proxmox_vm_qemu" "docker-public" {
-  name        = "docker-public"
+resource "proxmox_vm_qemu" "pterodactyl-panel" {
+  name        = "pterodactyl-panel"
   target_node = "pve-01"
   clone       = "ubuntu-24.04-template"
 
@@ -13,13 +13,13 @@ resource "proxmox_vm_qemu" "docker-public" {
   }
 
   cpu {
-    cores   = 4
+    cores   = 2
     sockets = 1
     type    = "host"
   }
 
-  memory = 16384
-  balloon = 16384
+  memory = 8192
+  balloon = 8192
   bios = "seabios"
   scsihw = "virtio-scsi-single"
 
@@ -36,8 +36,8 @@ resource "proxmox_vm_qemu" "docker-public" {
     scsi {
       scsi0 {
         disk {
-          storage  = "disk-02"
-          size     = "64G"
+          storage  = "local-lvm"
+          size     = "32G"
           iothread = true
         }
       }
@@ -58,5 +58,5 @@ resource "proxmox_vm_qemu" "docker-public" {
     tag    = 20
   }
 
-  ipconfig0 = "ip=10.20.20.105/24,gw=10.20.20.1"
+  ipconfig0 = "ip=10.20.20.109/24,gw=10.20.20.1"
 }

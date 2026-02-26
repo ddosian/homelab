@@ -60,36 +60,3 @@ resource "proxmox_vm_qemu" "k3s-virt-worker-01" {
 
   ipconfig0 = "ip=10.20.40.31/24,gw=10.20.40.1"
 }
-
-# NetBox
-resource "netbox_virtual_machine" "k3s-virt-worker-01" {
-  name         = proxmox_vm_qemu.k3s-virt-worker-01.name
-  cluster_id   = 1
-  device_id    = 1
-  vcpus        = 6
-  memory_mb    = 16000
-  disk_size_mb = 256000
-  status       = "active"
-}
-
-resource "netbox_interface" "k3s-virt-worker-01-eth0" {
-  name               = "eth0"
-  virtual_machine_id = netbox_virtual_machine.k3s-virt-worker-01.id
-}
-
-resource "netbox_ip_address" "k3s-virt-worker-01-ip" {
-  ip_address            = "10.20.40.31/24"
-  status                = "active"
-  virtual_machine_interface_id = netbox_interface.k3s-virt-worker-01-eth0.id
-}
-
-resource "netbox_primary_ip" "k3s-virt-worker-01-primary-ip" {
-  ip_address_id      = netbox_ip_address.k3s-virt-worker-01-ip.id
-  virtual_machine_id = netbox_virtual_machine.k3s-virt-worker-01.id
-}
-
-resource "netbox_virtual_disk" "k3s-virt-worker-01-scsi0" {
-  name               = "scsi0"
-  size_mb            = 256000
-  virtual_machine_id = netbox_virtual_machine.k3s-virt-worker-01.id
-}

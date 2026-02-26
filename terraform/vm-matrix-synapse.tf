@@ -60,36 +60,3 @@ resource "proxmox_vm_qemu" "matrix-synapse" {
 
   ipconfig0 = "ip=10.20.20.102/24,gw=10.20.20.1"
 }
-
-# NetBox
-resource "netbox_virtual_machine" "matrix-synapse" {
-  name         = proxmox_vm_qemu.matrix-synapse.name
-  cluster_id   = 1
-  device_id    = 1
-  vcpus        = 2
-  memory_mb    = 8000
-  disk_size_mb = 128000
-  status       = "active"
-}
-
-resource "netbox_interface" "matrix-synapse-eth0" {
-  name               = "eth0"
-  virtual_machine_id = netbox_virtual_machine.matrix-synapse.id
-}
-
-resource "netbox_ip_address" "matrix-synapse-ip" {
-  ip_address            = "10.20.20.102/24"
-  status                = "active"
-  virtual_machine_interface_id = netbox_interface.matrix-synapse-eth0.id
-}
-
-resource "netbox_primary_ip" "matrix-synapse-primary-ip" {
-  ip_address_id      = netbox_ip_address.matrix-synapse-ip.id
-  virtual_machine_id = netbox_virtual_machine.matrix-synapse.id
-}
-
-resource "netbox_virtual_disk" "matrix-synapse-scsi0" {
-  name               = "scsi0"
-  size_mb            = 128000
-  virtual_machine_id = netbox_virtual_machine.matrix-synapse.id
-}

@@ -60,36 +60,3 @@ resource "proxmox_vm_qemu" "mgmt-proxy" {
 
   ipconfig0 = "ip=10.20.10.2/24,gw=10.20.10.1"
 }
-
-# NetBox
-resource "netbox_virtual_machine" "mgmt-proxy" {
-  name         = proxmox_vm_qemu.mgmt-proxy.name
-  cluster_id   = 1
-  device_id    = 1
-  vcpus        = 1
-  memory_mb    = 2000
-  disk_size_mb = 32000
-  status       = "active"
-}
-
-resource "netbox_interface" "mgmt-proxy-eth0" {
-  name               = "eth0"
-  virtual_machine_id = netbox_virtual_machine.mgmt-proxy.id
-}
-
-resource "netbox_ip_address" "mgmt-proxy-ip" {
-  ip_address            = "10.20.10.2/24"
-  status                = "active"
-  virtual_machine_interface_id = netbox_interface.mgmt-proxy-eth0.id
-}
-
-resource "netbox_primary_ip" "mgmt-proxy-primary-ip" {
-  ip_address_id      = netbox_ip_address.mgmt-proxy-ip.id
-  virtual_machine_id = netbox_virtual_machine.mgmt-proxy.id
-}
-
-resource "netbox_virtual_disk" "mgmt-proxy-scsi0" {
-  name               = "scsi0"
-  size_mb            = 32000
-  virtual_machine_id = netbox_virtual_machine.mgmt-proxy.id
-}

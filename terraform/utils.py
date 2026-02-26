@@ -64,38 +64,3 @@ def generate_file(name, target_node, template, cpu_cores, cpu_sockets, cpu_type,
 
   ipconfig0 = "ip={ip_address}/{cidr},gw={gateway}"
 }}
-
-# NetBox
-resource "netbox_virtual_machine" "{name}" {{
-  name         = proxmox_vm_qemu.{name}.name
-  cluster_id   = 1
-  device_id    = 1
-  vcpus        = {cpu_cores}
-  memory_mb    = {ram_size * 1000}
-  disk_size_mb = {disk_size * 1000}
-  status       = "active"
-}}
-
-resource "netbox_interface" "{name}-eth0" {{
-  name               = "eth0"
-  virtual_machine_id = netbox_virtual_machine.{name}.id
-}}
-
-resource "netbox_ip_address" "{name}-ip" {{
-  ip_address            = "{ip_address}/{cidr}"
-  status                = "active"
-  virtual_machine_interface_id = netbox_interface.{name}-eth0.id
-}}
-
-resource "netbox_primary_ip" "{name}-primary-ip" {{
-  ip_address_id      = netbox_ip_address.{name}-ip.id
-  virtual_machine_id = netbox_virtual_machine.{name}.id
-}}
-
-resource "netbox_virtual_disk" "{name}-scsi0" {{
-  name               = "scsi0"
-  size_mb            = {disk_size * 1000}
-  virtual_machine_id = netbox_virtual_machine.{name}.id
-}}'''
-
-  return file
