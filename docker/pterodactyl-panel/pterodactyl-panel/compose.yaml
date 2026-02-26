@@ -1,4 +1,4 @@
-version: "3.8"
+---
 x-common:
   database: &db-environment
     MYSQL_PASSWORD: &db-password ${MYSQL_PASSWORD}
@@ -43,7 +43,7 @@ services:
     networks:
       - pterodactyl
   panel:
-    image: ghcr.io/pterodactyl/panel:latest
+    image: ghcr.io/pterodactyl/panel:v1.11.11
     restart: unless-stopped
     links:
       - database
