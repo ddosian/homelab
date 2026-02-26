@@ -1,20 +1,29 @@
+version: "3.8"
 x-common:
   database: &db-environment
     MYSQL_PASSWORD: &db-password ${MYSQL_PASSWORD}
     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   panel: &panel-environment
-    APP_URL: "http://panel.meteoritehost.com"
+    APP_URL: "https://panel.meteoritehost.com"
     APP_TIMEZONE: "UTC"
-    APP_SERVICE_AUTHOR: "no-reply@meteoritehost.com"
+    APP_SERVICE_AUTHOR: "noreply@meteoritehost.com"
+    TRUSTED_PROXIES: "*"
   mail: &mail-environment
-    MAIL_FROM: "no-reply@meteoritehost.com"
+    MAIL_FROM: "noreply@meteoritehost.com"
     MAIL_DRIVER: "smtp"
-    MAIL_HOST: "mail"
+    MAIL_HOST: "mail.dontddos.me"
     MAIL_PORT: "465"
-    MAIL_USERNAME: "no-reply@meteoritehost.com"
+    MAIL_USERNAME: "noreply@meteoritehost.com"
     MAIL_PASSWORD: ${MAIL_PASSWORD}
-    MAIL_ENCRYPTION: "tls"
+    MAIL_ENCRYPTION: "true"
 
+#
+# ------------------------------------------------------------------------------------------
+# DANGER ZONE BELOW
+#
+# The remainder of this file likely does not need to be changed. Please only make modifications
+# below if you understand what you are doing.
+#
 services:
   database:
     image: mariadb:10.5
@@ -28,14 +37,13 @@ services:
       MYSQL_USER: "pterodactyl"
     networks:
       - pterodactyl
-
   cache:
     image: redis:alpine
-    restart: unless-stopped
+    restart: always
     networks:
       - pterodactyl
   panel:
-    image: ghcr.io/pterodactyl/panel:v1.11.7
+    image: ghcr.io/pterodactyl/panel:latest
     restart: unless-stopped
     links:
       - database
@@ -59,8 +67,7 @@ services:
     networks:
       - pterodactyl
       - newt
-
 networks:
-  pterodactyl:
   newt:
     external: true
+  pterodactyl:
