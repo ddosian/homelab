@@ -68,6 +68,6 @@ services:
       - pterodactyl
       - newt
 networks:
+  pterodactyl:
   newt:
     external: true
-  pterodactyl:
