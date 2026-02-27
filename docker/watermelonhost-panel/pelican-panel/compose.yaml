@@ -1,0 +1,24 @@
+services:
+  panel:
+    image: ghcr.io/pelican-dev/panel:latest
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - data:/pelican-data
+      - logs:/var/www/html/storage/logs
+      - /opt/containers/pelican-panel/Caddyfile:/etc/caddy/Caddyfile
+    environment:
+      XDG_DATA_HOME: /pelican-data
+      APP_URL: "https://panel.watermelon.host"
+      ADMIN_EMAIL: "admin@dontddos.me"
+    networks:
+      - newt
+    restart: unless-stopped
+
+volumes:
+  data:
+  logs:
+
+networks:
+  newt:
+    external: true
