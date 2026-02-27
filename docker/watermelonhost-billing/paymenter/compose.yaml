@@ -1,0 +1,60 @@
+x-common:
+  database: &db-environment
+    # Do not remove the "&db-password" from the end of the line below, it is important
+    # for Paymenter functionality.
+    MYSQL_PASSWORD: &db-password ${MYSQL_PASSWORD}
+    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+#
+# ------------------------------------------------------------------------------------------
+# DANGER ZONE BELOW
+#
+# The remainder of this file likely does not need to be changed. Please only make modifications
+# below if you understand what you are doing.
+#
+services:
+  database:
+    image: mariadb:lts
+    restart: unless-stopepd
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "/opt/containers/paymenter/database:/var/lib/mysql"
+    environment:
+      <<: *db-environment
+      MYSQL_DATABASE: "paymenter"
+      MYSQL_USER: "paymenter"
+    networks:
+      - paymenter
+  cache:
+    image: redis:alpine
+    restart: unless-stopepd
+    networks:
+      - paymenter
+  paymenter:
+    image: ghcr.io/paymenter/paymenter:latest
+    restart: unless-stopepd
+    links:
+      - database
+      - cache
+    volumes:
+      - "/opt/containers/paymenter/:/app/var/"
+      - "/opt/containers/paymenter/storage/logs:/app/storage/logs"
+      - "/opt/containers/paymenter/storage/public:/app/storage/app/public"
+    environment:
+      DB_PASSWORD: *db-password
+      APP_ENV: "production"
+      CACHE_STORE: "redis"
+      REDIS_HOST: "cache"
+      DB_CONNECTION: "mariadb"
+      DB_HOST: "database"
+      DB_PORT: "3306"
+    networks:
+      - paymenter
+      - newt
+networks:
+  paymenter:
+    ipam:
+      config:
+        - subnet: 172.23.0.0/16
+  newt:
+    external: true
