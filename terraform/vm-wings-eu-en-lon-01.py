@@ -20,10 +20,10 @@ cloudinit_storage = "local-lvm"
 
 # Network Settings
 network_bridge = "vmbr1"
-vlan_tag = 20
-ip_address = "10.20.20.110"
+vlan_tag = 30
+ip_address = "10.20.30.110"
 cidr = "24"
-gateway = "10.20.20.1"
+gateway = "10.20.30.3"
 
 with open("vm-wings-eu-en-lon-01.tf", "w") as f:
     f.write(utils.generate_file(name, target_node, template, cpu_cores, cpu_sockets, cpu_type, ram_size, disk_storage, disk_size, cloudinit_storage, network_bridge, vlan_tag, ip_address, cidr, gateway))

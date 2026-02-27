@@ -55,8 +55,8 @@ resource "proxmox_vm_qemu" "wings-eu-en-lon-01" {
     id     = 0
     model  = "virtio"
     bridge = "vmbr1"
-    tag    = 20
+    tag    = 30
   }
 
-  ipconfig0 = "ip=10.20.20.110/24,gw=10.20.20.1"
+  ipconfig0 = "ip=10.20.30.110/24,gw=10.20.30.3"
 }
