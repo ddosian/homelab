@@ -9,7 +9,8 @@ services:
       - /opt/containers/pelican-panel/Caddyfile:/etc/caddy/Caddyfile
     environment:
       XDG_DATA_HOME: /pelican-data
-      APP_URL: "http://panel.watermelon.host"
+      APP_URL: "https://panel.watermelon.host"
+      BEHIND_PROXY: "true"
       ADMIN_EMAIL: "admin@dontddos.me"
     networks:
       - newt
