@@ -15,7 +15,7 @@ x-common:
 services:
   database:
     image: mariadb:lts
-    restart: unless-stopepd
+    restart: unless-stopped
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - "/opt/containers/paymenter/database:/var/lib/mysql"
@@ -27,12 +27,12 @@ services:
       - paymenter
   cache:
     image: redis:alpine
-    restart: unless-stopepd
+    restart: unless-stopped
     networks:
       - paymenter
   paymenter:
     image: ghcr.io/paymenter/paymenter:latest
-    restart: unless-stopepd
+    restart: unless-stopped
     links:
       - database
       - cache
