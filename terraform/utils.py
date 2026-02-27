@@ -63,4 +63,5 @@ def generate_file(name, target_node, template, cpu_cores, cpu_sockets, cpu_type,
   }}
 
   ipconfig0 = "ip={ip_address}/{cidr},gw={gateway}"
-}}
+}}'''
+  return file
