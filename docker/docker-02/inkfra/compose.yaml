@@ -1,0 +1,19 @@
+---
+services:
+  inkfra:
+    image: ddosian/inkfra:latest
+    volumes:
+      - /opt/containers/inkfra/config:/config:ro
+      - /opt/containers/inkfra/output:/output:rw
+    restart: unless-stopped
+  nginx:
+    image: nginx:latest
+    volumes:
+      - /opt/containers/inkfra/output:/usr/share/nginx/html:ro
+    networks:
+      - newt
+    restart: unless-stopped
+
+networks:
+  newt:
+    external: true
