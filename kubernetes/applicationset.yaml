@@ -15,16 +15,16 @@ spec:
           - path: kubernetes/*/*
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: "{{.path.basename}}"
     spec:
       project: default
       source:
         repoURL: https://gitea.dontddos.me/dontddos/homelab.git
-        path: '{{.path.path}}'
+        path: "{{.path.path}}"
         targetRevision: HEAD
       destination:
         server: "https://kubernetes.default.svc"
-        namespace: '{{index .path.segments 1}}'
+        namespace: "{{index .path.segments 1}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
