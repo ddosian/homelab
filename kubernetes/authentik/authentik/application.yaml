@@ -25,7 +25,7 @@ spec:
           authentik:
             enabled: true
             postgresql:
-              host: "authentik-dbc-2-rw"
+              host: "authentik-dbc-rw"
               name: "authentik"
               user: "authentik"
               port: 5432
