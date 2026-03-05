@@ -91,6 +91,7 @@ services:
     restart: unless-stopped
     networks:
       - coolify
+      - newt
     image: "${REGISTRY_URL:-ghcr.io}/coollabsio/coolify-realtime:1.0.10"
     ports:
       - "${SOKETI_PORT:-6001}:6001"
