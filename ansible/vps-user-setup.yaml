@@ -1,0 +1,22 @@
+- name: VPS user setup
+  hosts: vps
+  user: root
+  tasks:
+    - name: Create user
+      ansible.builtin.user:
+        name: ddos
+        create_home: yes
+        group: root
+    - name: Add SSH key
+      ansible.posix.authorized_key:
+        user: ddos
+        key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINew6VSTlJ2ZEEC8OgqZCc1zSSL6tMSUUybpXH4ADAAf
+        comment: ddos@macbook
+    - name: Allow sudo without password
+      ansible.builtin.copy:
+        content: |
+          ddos ALL=(ALL) NOPASSWD: ALL
+        dest: /etc/sudoers.d/ddos
+        owner: root
+        group: root
+        mode: 0440
