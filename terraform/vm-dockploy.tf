@@ -1,5 +1,5 @@
-resource "proxmox_vm_qemu" "coolify" {
-  name        = "coolify"
+resource "proxmox_vm_qemu" "dockploy" {
+  name        = "dockploy"
   target_node = "pve-02"
   clone       = "ubuntu-24.04-template"
 
@@ -58,5 +58,5 @@ resource "proxmox_vm_qemu" "coolify" {
     tag    = 1
   }
 
-  ipconfig0 = "ip=10.77.0.109/16,gw=10.77.0.3"
+  ipconfig0 = "ip=10.77.1.109/16,gw=10.77.0.3"
 }
