@@ -1,14 +1,2 @@
 .DS_Store
-.obsidian
-
 .env
-
-*.lock*
-
-# Terraform
-*.tfvars
-.terraform/
-*.tfstate*
-
-# Python
-__pycache__/
