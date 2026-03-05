@@ -8,6 +8,7 @@ services:
       - host.docker.internal:host-gateway
     networks:
       - coolify
+      - proxy
     image: "${REGISTRY_URL:-ghcr.io}/coollabsio/coolify:${LATEST_IMAGE:-latest}"
     volumes:
       - type: bind
@@ -120,4 +121,6 @@ volumes:
 
 networks:
   coolify:
+    external: true
+  proxy:
     external: true
