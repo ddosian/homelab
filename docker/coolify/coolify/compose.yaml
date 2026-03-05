@@ -38,6 +38,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
   postgres:
+    image: postgres:15
     volumes:
       - coolify-db:/var/lib/postgresql/data
     environment:
