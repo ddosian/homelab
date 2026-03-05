@@ -1,5 +1,5 @@
-resource "proxmox_vm_qemu" "dockploy" {
-  name        = "dockploy"
+resource "proxmox_vm_qemu" "dokploy" {
+  name        = "dokploy"
   target_node = "pve-02"
   clone       = "ubuntu-24.04-template"
 
