@@ -1,7 +1,7 @@
 ---
 services:
   gitea:
-    image: docker.gitea.com/gitea:1.25.3
+    image: docker.gitea.com/gitea:1.25.4
     container_name: gitea
     environment:
       - USER_UID=1000
