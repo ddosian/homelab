@@ -17,7 +17,7 @@ services:
     restart: unless-stopped
 
   db:
-    image: docker.io/postgres:15-alpine
+    image: docker.io/postgres:18-alpine
     container_name: synapse-db
     environment:
       - POSTGRES_USER=synapse
