@@ -1,5 +1,13 @@
+---
 services:
   coolify:
+    container_name: coolify
+    restart: unless-stopped
+    working_dir: /var/www/html
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    networks:
+      - coolify
     image: "${REGISTRY_URL:-ghcr.io}/coollabsio/coolify:${LATEST_IMAGE:-latest}"
     volumes:
       - type: bind
@@ -36,9 +44,12 @@ services:
         condition: service_healthy
       soketi:
         condition: service_healthy
-    restart: unless-stopped
   postgres:
-    image: postgres:15
+    image: postgres:15-alpine
+    container_name: coolify-db
+    restart: unless-stopped
+    networks:
+      - coolify
     volumes:
       - coolify-db:/var/lib/postgresql/data
     environment:
@@ -56,8 +67,12 @@ services:
       interval: 5s
       retries: 10
       timeout: 2s
-    restart: unless-stopped
   redis:
+    image: redis:7-alpine
+    container_name: coolify-redis
+    restart: unless-stopped
+    networks:
+      - coolify
     command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
     environment:
       REDIS_PASSWORD: "${REDIS_PASSWORD}"
@@ -68,8 +83,13 @@ services:
       interval: 5s
       retries: 10
       timeout: 2s
-    restart: unless-stopped
   soketi:
+    container_name: coolify-realtime
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+    networks:
+      - coolify
     image: "${REGISTRY_URL:-ghcr.io}/coollabsio/coolify-realtime:1.0.10"
     ports:
       - "${SOKETI_PORT:-6001}:6001"
@@ -91,7 +111,7 @@ services:
       interval: 5s
       retries: 10
       timeout: 2s
-    restart: unless-stopped
+
 volumes:
   coolify-db:
     name: coolify-db
