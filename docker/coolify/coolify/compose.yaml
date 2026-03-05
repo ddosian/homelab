@@ -8,7 +8,6 @@ services:
       - host.docker.internal:host-gateway
     networks:
       - coolify
-      - newt
     image: "${REGISTRY_URL:-ghcr.io}/coollabsio/coolify:${LATEST_IMAGE:-latest}"
     volumes:
       - type: bind
@@ -91,7 +90,6 @@ services:
     restart: unless-stopped
     networks:
       - coolify
-      - newt
     image: "${REGISTRY_URL:-ghcr.io}/coollabsio/coolify-realtime:1.0.10"
     ports:
       - "${SOKETI_PORT:-6001}:6001"
@@ -122,6 +120,4 @@ volumes:
 
 networks:
   coolify:
-    external: true
-  newt:
     external: true
