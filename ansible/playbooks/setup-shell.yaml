@@ -1,0 +1,44 @@
+- name: Setup Shell
+  hosts: ubuntu
+  user: ddos
+  tasks:
+    - name: Install zsh
+      become: yes
+      apt:
+        name: zsh
+        state: present
+    - name: Set Zsh as default shell
+      become: yes
+      user:
+        name: ddos
+        shell: /usr/bin/zsh
+    - name: Install Oh My Zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      args:
+        creates: /home/ddos/.oh-my-zsh
+
+    - name: Install Powerlevel10k theme
+      git:
+        repo: https://github.com/romkatv/powerlevel10k.git
+        dest: /home/ddos/.powerlevel10k
+        depth: 1
+
+    - name: Source Powerlevel10k in .zshrc
+      lineinfile:
+        path: /home/ddos/.zshrc
+        line: 'source ~/.powerlevel10k/powerlevel10k.zsh-theme'
+        create: yes
+
+    - name: Copy Powerlevel10k configuration
+      become: yes
+      copy:
+        src: ~/.p10k.zsh
+        dest: /home/ddos/.p10k.zsh
+        owner: ddos
+        group: ddos
+        mode: '0644'
+    - name: Source p10k config in .zshrc
+      lineinfile:
+        path: /home/ddos/.zshrc
+        line: 'source ~/.p10k.zsh'
+        create: yes
