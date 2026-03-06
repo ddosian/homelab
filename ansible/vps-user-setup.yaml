@@ -7,6 +7,7 @@
         name: ddos
         create_home: yes
         group: root
+        shell: /bin/bash
     - name: Add SSH key
       ansible.posix.authorized_key:
         user: ddos
