@@ -60,4 +60,13 @@
         name: ddos
         groups: docker
         append: yes
-      when: docker_check.rc != 0
+    - name: Create containers group
+      ansible.builtin.group:
+        name: containers
+        state: present
+    - name: Add user to containers group
+      ansible.builtin.user:
+        name: ddos
+        groups: containers
+        append: yes
+    
