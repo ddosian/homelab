@@ -3,13 +3,19 @@
   user: ddos
   become: yes
   tasks:
+    - name: Check if Docker is already installed
+      ansible.builtin.command: docker --version
+      register: docker_check
+      ignore_errors: yes
     - name: APT update
       ansible.builtin.apt:
         update_cache: yes
+      when: docker_check.rc != 0
     - name: Install dependencies
       ansible.builtin.apt:
         name: ca-certificates,curl
         state: present
+      when: docker_check.rc != 0
     - name: Ensure /etc/apt/keyrings directory exists
       ansible.builtin.file:
         path: /etc/apt/keyrings
@@ -17,15 +23,18 @@
         mode: '0755'
         owner: root
         group: root
+      when: docker_check.rc != 0
     - name: Download Docker GPG key
       ansible.builtin.get_url:
         url: https://download.docker.com/linux/ubuntu/gpg
         dest: /etc/apt/keyrings/docker.asc
         mode: '0644'
+      when: docker_check.rc != 0
     - name: Make Docker key readable by everyone
       ansible.builtin.file:
         path: /etc/apt/keyrings/docker.asc
         mode: '0644'
+      when: docker_check.rc != 0
     - name: Configure Docker apt source
       ansible.builtin.copy:
         dest: /etc/apt/sources.list.d/docker.sources
@@ -36,15 +45,19 @@
           Suites: {{ ansible_lsb.codename }}
           Components: stable
           Signed-By: /etc/apt/keyrings/docker.asc
+      when: docker_check.rc != 0
     - name: APT update
       ansible.builtin.apt:
         update_cache: yes
+      when: docker_check.rc != 0
     - name: Install Docker
       ansible.builtin.apt:
         name: docker-ce,docker-ce-cli,containerd.io,docker-buildx-plugin,docker-compose-plugin
         state: present
+      when: docker_check.rc != 0
     - name: Add user to docker group
       ansible.builtin.user:
         name: ddos
         groups: docker
         append: yes
+      when: docker_check.rc != 0
