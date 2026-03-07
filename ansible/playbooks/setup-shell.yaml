@@ -16,6 +16,9 @@
       shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       args:
         creates: /home/ddos/.oh-my-zsh
+      environment:
+        RUNZSH: 'no'
+        CHSH: 'no'
 
     - name: Install Powerlevel10k theme
       git:
