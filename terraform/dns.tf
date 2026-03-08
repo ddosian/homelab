@@ -38,3 +38,23 @@ resource "adguard_rewrite" "vaultwarden" {
   domain = "vaultwarden.local.dontddos.me"
   answer = "10.0.1.102"
 }
+
+resource "adguard_rewrite" "prowlarr" {
+  domain = "prowlarr.local.dontddos.me"
+  answer = "10.0.1.104"
+}
+
+resource "adguard_rewrite" "qbittorrent" {
+  domain = "qbittorrent.local.dontddos.me"
+  answer = "10.0.1.104"
+}
+
+resource "adguard_rewrite" "radarr" {
+  domain = "radarr.local.dontddos.me"
+  answer = "10.0.1.104"
+}
+
+resource "adguard_rewrite" "sonarr" {
+  domain = "sonarr.local.dontddos.me"
+  answer = "10.0.1.104"
+}
