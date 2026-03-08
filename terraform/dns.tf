@@ -27,3 +27,8 @@ resource "adguard_rewrite" "adguard-home-prod-01" {
   domain = "adguard-home-prod-01.local.dontddos.me"
   answer = "10.0.1.103"
 }
+
+resource "adguard_rewrite" "nas-prod-01" {
+  domain = "nas-prod-01.local.dontddos.me"
+  answer = "10.0.1.5"
+}
