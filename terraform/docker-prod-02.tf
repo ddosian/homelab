@@ -1,6 +1,6 @@
 resource "proxmox_vm_qemu" "docker-prod-02" {
   name        = "docker-prod-02"
-  target_node = "pve-prod-02"
+  target_node = "pve-prod-01"
   clone       = "ubuntu-24.04"
 
   agent = 1
