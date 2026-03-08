@@ -1,0 +1,40 @@
+- name: VPS SSH
+  hosts: vps
+  user: ddos
+  become: yes
+  tasks:
+    - name: Delete existing sshd_config.d/
+      file:
+        path: /etc/ssh/sshd_config.d/
+        state: absent
+    - name: Create sshd_config.d/ directory
+      file:
+        path: /etc/ssh/sshd_config.d/
+        state: directory
+        owner: root
+        group: root
+        mode: 0755
+    - name: Change SSH port
+      copy:
+        content: |
+          Port 47382
+        dest: /etc/ssh/sshd_config.d/port.conf
+        owner: root
+        group: root
+        mode: 0644
+    - name: Harden SSH
+      copy:
+        content: |
+          PasswordAuthentication no
+          PermitRootLogin no
+        dest: /etc/ssh/sshd_config.d/hardening.conf
+        owner: root
+        group: root
+        mode: 0644
+    - name: Reload Daemon
+      ansible.builtin.systemd:
+        daemon_reload: yes
+    - name: Restart SSH service
+      ansible.builtin.service:
+        name: ssh
+        state: restarted
