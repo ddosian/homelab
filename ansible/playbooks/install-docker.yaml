@@ -69,4 +69,11 @@
         name: ddos
         groups: containers
         append: yes
+    - name: Install set-container-permissions script
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/ddosian/homelab/main/scripts/bash/set-container-permissions.sh
+        dest: /usr/local/bin/set-container-permissions
+        mode: '0755'
+        owner: root
+        group: root
     
