@@ -61,5 +61,5 @@ resource "proxmox_vm_qemu" "docker-prod-03" {
   sshkeys = <<EOF
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINew6VSTlJ2ZEEC8OgqZCc1zSSL6tMSUUybpXH4ADAAf ddos@macbook
 EOF
-  ipconfig0 = "ip=10.0.10.105/16,gw=10.0.10.1"
+  ipconfig0 = "ip=10.0.10.105/24,gw=10.0.10.1"
 }
