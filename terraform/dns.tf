@@ -13,6 +13,11 @@ resource "adguard_rewrite" "docker-prod-01" {
   answer = "10.0.1.102"
 }
 
+resource "adguard_rewrite" "docker-prod-02" {
+  domain = "docker-prod-02.local.dontddos.me"
+  answer = "10.0.1.104"
+}
+
 resource "adguard_rewrite" "dns-prod-01" {
   domain = "dns-prod-01.local.dontddos.me"
   answer = "10.0.1.103"
