@@ -32,3 +32,9 @@ resource "adguard_rewrite" "nas-prod-01" {
   domain = "nas-prod-01.local.dontddos.me"
   answer = "10.0.1.5"
 }
+
+# services:
+resource "adguard_rewrite" "vaultwarden" {
+  domain = "vaultwarden.local.dontddos.me"
+  answer = "10.0.1.102"
+}
