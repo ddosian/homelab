@@ -62,4 +62,6 @@ resource "proxmox_vm_qemu" "docker-prod-02" {
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINew6VSTlJ2ZEEC8OgqZCc1zSSL6tMSUUybpXH4ADAAf ddos@macbook
 EOF
   ipconfig0 = "ip=10.0.1.104/24,gw=10.0.1.1"
+  nameserver = "10.0.1.103"
+  searchdomain = "local.dontddos.me"
 }
