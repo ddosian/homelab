@@ -68,3 +68,13 @@ resource "adguard_rewrite" "sonarr" {
   domain = "sonarr.local.dontddos.me"
   answer = "10.0.1.104"
 }
+
+resource "adguard_rewrite" "grafana" {
+  domain = "grafana.local.dontddos.me"
+  answer = "10.0.1.102"
+}
+
+resource "adguard_rewrite" "prometheus" {
+  domain = "prometheus.local.dontddos.me"
+  answer = "10.0.1.102"
+}
