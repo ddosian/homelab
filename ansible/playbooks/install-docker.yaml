@@ -42,7 +42,7 @@
         content: |
           Types: deb
           URIs: https://download.docker.com/linux/ubuntu
-          Suites: {{ ansible_lsb.codename }}
+          Suites: {{ ansible_facts["lsb"]["codename"] }}
           Components: stable
           Signed-By: /etc/apt/keyrings/docker.asc
       when: docker_check.rc != 0
