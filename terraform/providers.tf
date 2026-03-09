@@ -8,6 +8,10 @@ terraform {
             source = "gmichels/adguard"
             version = "1.6.2"
         }
+        b2 = {
+            source = "backblaze/b2"
+            version = "0.12.1"
+        }
     }
 }
 
@@ -48,4 +52,19 @@ provider "adguard" {
   host     = "adguard-home-prod-01.local.dontddos.me"
   username = var.adguard_username
   password = var.adguard_password
+}
+
+variable "backblaze_application_key_id" {
+    type        = string
+    sensitive   = true
+}
+
+variable "backblaze_application_key" {
+    type        = string
+    sensitive   = true
+}
+
+provider "b2" {
+  application_key_id = var.backblaze_application_key_id
+  application_key    = var.backblaze_application_key
 }

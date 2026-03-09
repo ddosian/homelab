@@ -1,0 +1,1 @@
+# NOTE: ddosterraform is not managed by Terraform to prevent a chicken-and-egg problem
